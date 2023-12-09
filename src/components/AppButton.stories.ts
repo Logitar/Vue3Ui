@@ -27,7 +27,7 @@ const meta = {
   },
   args: {
     disabled: false,
-    icon: "fas fa-floppy-disk",
+    icon: undefined,
     loading: false,
     name: undefined,
     nowrap: false,
@@ -51,29 +51,72 @@ export const LoadingDisabled: Story = {
   args: {
     disabled: true,
     loading: true,
-    variant: "warning",
   },
 };
 
-export const Outlined: Story = {
+export const WithIcon: Story = {
   args: {
-    icon: undefined,
-    outline: true,
+    icon: "fas fa-floppy-disk",
   },
 };
 
-export const LargeSuccess: Story = {
-  args: {
-    icon: undefined,
-    size: "large",
-    variant: "success",
-  },
+export const DifferentSizes: Story = {
+  render: () => ({
+    components: { AppButton },
+    template: `
+      <AppButton size="small">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton size="medium">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton size="large">Click me!</AppButton>
+    `,
+  }),
 };
 
-export const SmallDanger: Story = {
-  args: {
-    icon: undefined,
-    size: "small",
-    variant: "danger",
-  },
+export const ColoredButtons: Story = {
+  render: () => ({
+    components: { AppButton },
+    template: `
+      <AppButton variant="primary">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="secondary">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="success">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="danger">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="warning">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="info">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="light">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="dark">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton variant="link">Click me!</AppButton>
+    `,
+  }),
+};
+
+export const OutlinedButtons: Story = {
+  render: () => ({
+    components: { AppButton },
+    template: `
+      <AppButton outline variant="primary">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="secondary">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="success">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="danger">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="warning">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="info">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="light">Click me!</AppButton>
+      <span class="me-2"></span>
+      <AppButton outline variant="dark">Click me!</AppButton>
+    `,
+  }),
 };

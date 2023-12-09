@@ -21,16 +21,50 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {
-    grow: true,
-    variant: "warning",
-  },
+export const SimpleSpinner: Story = {};
+
+export const GrowSpinners: Story = {
+  render: () => ({
+    components: { AppSpinner },
+    template: `
+      <AppSpinner grow variant="primary" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="secondary" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="success" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="danger" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="warning" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="info" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="light" />
+      <span class="me-2"></span>
+      <AppSpinner grow variant="dark" />
+    `,
+  }),
 };
 
-export const Secondary: Story = {
-  args: {
-    inline: true,
-    small: true,
-  },
+export const InlineRotatingSpinners: Story = {
+  render: () => ({
+    components: { AppSpinner },
+    template: `
+      <AppSpinner inline small variant="primary" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="secondary" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="success" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="danger" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="warning" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="info" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="light" />
+      <span class="me-2"></span>
+      <AppSpinner inline small variant="dark" />
+    `,
+  }),
 };

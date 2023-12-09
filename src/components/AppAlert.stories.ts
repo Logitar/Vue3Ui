@@ -11,10 +11,17 @@ const meta = {
   },
   args: {
     dismissible: false,
-    modelValue: undefined,
+    modelValue: false,
     show: true,
     variant: "primary",
   },
+  render: (args) => ({
+    components: { AppAlert },
+    setup() {
+      return { args };
+    },
+    template: `<AppAlert v-bind="args">This is an alert.</AppAlert>`,
+  }),
 } satisfies Meta<typeof AppAlert>;
 
 export default meta;
@@ -24,9 +31,24 @@ export const Primary: Story = {
   args: {},
 };
 
-export const Secondary: Story = {
+export const Dismissible: Story = {
   args: {
     dismissible: true,
-    variant: "warning",
   },
+};
+
+export const ColoredAlerts: Story = {
+  render: () => ({
+    components: { AppAlert },
+    template: `
+      <AppAlert show variant="primary">This is an <strong>important</strong> message.</AppAlert>
+      <AppAlert show variant="secondary">This is another message.</AppAlert>
+      <AppAlert show variant="success"><strong>Success!</strong> The requested operation has completed.</AppAlert>
+      <AppAlert show variant="danger"><strong>Error!</strong> An unexpected error occurred.</AppAlert>
+      <AppAlert show variant="warning"><strong>Warning!</strong> There are validation errors in the form below.</AppAlert>
+      <AppAlert show variant="info">Some useful info here...</AppAlert>
+      <AppAlert show variant="light">Works better in a dark theme.</AppAlert>
+      <AppAlert show variant="dark">Works better in a light theme.</AppAlert>
+    `,
+  }),
 };
