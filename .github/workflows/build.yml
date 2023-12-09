@@ -8,11 +8,28 @@ on:
 
 jobs:
   build:
+    name: Build Vue3 UI
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - run: |
-          npm ci
-          npm run build
-          npm run test
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Install dependencies
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Build for Production
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+
+      - name: Run Tests & Coverage
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
