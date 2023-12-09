@@ -1,12 +1,9 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
-import { useRouter, type RouteLocationRaw } from "vue-router";
 
 import AppSpinner from "@/components/AppSpinner.vue";
 import type { ButtonSize, ButtonType, ButtonVariant } from "@/types/components/AppButton";
-
-const router = useRouter();
 
 const props = withDefaults(
   defineProps<{
@@ -42,10 +39,6 @@ const props = withDefaults(
      * The hidden text for accessibility of the button's spinner.
      */
     status?: string;
-    /**
-     * When clicked, the button will act as an hyperlink (`<a href...`).
-     */
-    to?: RouteLocationRaw;
     /**
      * The text displayed inside the button.
      */
@@ -94,12 +87,6 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 
-function onClick(): void {
-  if (props.to) {
-    router.push(props.to);
-  }
-}
-
 defineEmits<{
   /**
    * The button has been clicked.
@@ -109,7 +96,7 @@ defineEmits<{
 </script>
 
 <template>
-  <button :class="classes" :disabled="disabled" :name="name" :type="type" :value="value" @click="onClick">
+  <button :class="classes" :disabled="disabled" :name="name" :type="type" :value="value">
     <slot v-if="loading" name="spinner">
       <AppSpinner inline small />
       <span class="visually-hidden" role="status">{{ status }}</span>
