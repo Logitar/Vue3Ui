@@ -55,9 +55,7 @@ export const LoadingDisabled: Story = {
 };
 
 export const WithIcon: Story = {
-  args: {
-    icon: "fas fa-floppy-disk",
-  },
+  args: { icon: "fas fa-floppy-disk" },
 };
 
 export const DifferentSizes: Story = {
