@@ -1,11 +1,6 @@
 import type { Preview } from "@storybook/vue3";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark);
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const preview: Preview = {
   parameters: {

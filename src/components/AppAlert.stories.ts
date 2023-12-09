@@ -10,6 +10,7 @@ const meta = {
     variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] },
   },
   args: {
+    close: "Close",
     dismissible: false,
     modelValue: false,
     show: true,
@@ -27,14 +28,10 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
-  args: {},
-};
+export const Primary: Story = {};
 
 export const Dismissible: Story = {
-  args: {
-    dismissible: true,
-  },
+  args: { dismissible: true },
 };
 
 export const ColoredAlerts: Story = {

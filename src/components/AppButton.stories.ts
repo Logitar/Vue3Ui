@@ -1,6 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
+import { faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 import AppButton from "./AppButton.vue";
+
+library.add(faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark);
 
 const meta = {
   title: "Components/AppButton",
@@ -55,9 +59,7 @@ export const LoadingDisabled: Story = {
 };
 
 export const WithIcon: Story = {
-  args: {
-    icon: "fas fa-floppy-disk",
-  },
+  args: { icon: "fas fa-floppy-disk" },
 };
 
 export const DifferentSizes: Story = {

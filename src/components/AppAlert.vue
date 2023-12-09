@@ -6,6 +6,10 @@ import type { AlertVariant } from "@/types/components/AppAlert";
 const props = withDefaults(
   defineProps<{
     /**
+     * The close label for accessibility.
+     */
+    close?: string;
+    /**
      * The alert will display a close button that will hide the alert when clicked.
      */
     dismissible?: boolean;
@@ -23,6 +27,7 @@ const props = withDefaults(
     variant?: AlertVariant;
   }>(),
   {
+    close: "Close",
     dismissible: false,
     modelValue: false,
     show: false,
@@ -56,6 +61,6 @@ defineEmits<{
 <template>
   <div :class="classes" role="alert" v-show="isShown">
     <slot></slot>
-    <button v-if="dismissible" type="button" class="btn-close" aria-label="Close" @click="$emit('update:model-value', false)"></button>
+    <button v-if="dismissible" type="button" class="btn-close" :aria-label="close" @click="$emit('update:model-value', false)"></button>
   </div>
 </template>
