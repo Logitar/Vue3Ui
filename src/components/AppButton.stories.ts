@@ -7,10 +7,23 @@ const meta = {
   component: AppButton,
   tags: ["autodocs"],
   argTypes: {
-    icon: { control: "select", options: ["fas fa-ban", "fas fa-chevron-left", "fas fa-floppy-disk", "fas fa-house", "fas fa-minus", "fas fa-plus", "fas fa-rotate", "fas fa-trash-can", "fas fa-xmark"] },
+    icon: {
+      control: "select",
+      options: [
+        "fas fa-ban",
+        "fas fa-chevron-left",
+        "fas fa-floppy-disk",
+        "fas fa-house",
+        "fas fa-minus",
+        "fas fa-plus",
+        "fas fa-rotate",
+        "fas fa-trash-can",
+        "fas fa-xmark",
+      ],
+    },
     size: { control: "select", options: ["small", "medium", "large"] },
     type: { control: "select", options: ["button", "submit", "reset"] },
-    variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "link"] }
+    variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark", "link"] },
   },
   args: {
     disabled: false,
@@ -25,8 +38,8 @@ const meta = {
     to: undefined,
     type: "button",
     value: undefined,
-    variant: "primary"
-  }
+    variant: "primary",
+  },
 } satisfies Meta<typeof AppButton>;
 
 export default meta;
@@ -39,24 +52,29 @@ export const LoadingDisabled: Story = {
   args: {
     disabled: true,
     loading: true,
-    variant: "warning"
-  }
-}
+    variant: "warning",
+  },
+};
 
 export const Outlined: Story = {
-  args: { outline: true }
-}
+  args: {
+    icon: undefined,
+    outline: true,
+  },
+};
 
 export const LargeSuccess: Story = {
   args: {
+    icon: undefined,
     size: "large",
-    variant: "success"
-  }
-}
+    variant: "success",
+  },
+};
 
 export const SmallDanger: Story = {
   args: {
+    icon: undefined,
     size: "small",
-    variant: "danger"
-  }
-}
+    variant: "danger",
+  },
+};
