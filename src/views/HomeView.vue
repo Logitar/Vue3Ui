@@ -1,18 +1,6 @@
-<script setup lang="ts">
-import { ref } from "vue";
-
-import AppButton from "@/components/AppButton.vue";
-
-const counter = ref<number>(0);
-</script>
-
 <template>
   <main class="container">
     <h1>Hello World!</h1>
-    <div class="mb-3">
-      <AppButton @click="counter++" icon="fas fa-user-secret" text="Click Me!" :loading="counter % 2 === 1" />
-    </div>
-    <p>You have clicked the button {{ counter }} {{ counter > 1 ? "times" : "time" }}.</p>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum luctus mi, vel dignissim mi consectetur nec. Vestibulum in sapien sit amet arcu
       suscipit accumsan ac sit amet risus. Curabitur vel dictum dui. Nam quis ipsum pretium, finibus nunc ut, mollis risus. Suspendisse sed neque ut tortor
