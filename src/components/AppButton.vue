@@ -9,18 +9,57 @@ const router = useRouter();
 
 const props = withDefaults(
   defineProps<{
+    /**
+     * The button will display with a disabled style and will not react to events.
+     */
     disabled?: boolean;
+    /**
+     * The Font Awesome icon to display when not loading.
+     */
     icon?: string | string[];
+    /**
+     * The button will display a spinner instead of its icon.
+     */
     loading?: boolean;
+    /**
+     * The name of the button, used when submitting forms.
+     */
     name?: string;
+    /**
+     * The button text will not wrap.
+     */
     nowrap?: boolean;
+    /**
+     * The button will use a colored outline instead of solid colors.
+     */
     outline?: boolean;
+    /**
+     * The size of the button.
+     */
     size?: ButtonSize;
+    /**
+     * The hidden text for accessibility of the button's spinner.
+     */
     status?: string;
+    /**
+     * When clicked, the button will act as an hyperlink (`<a href...`).
+     */
     to?: RouteLocationRaw;
+    /**
+     * The text displayed inside the button.
+     */
     text?: string;
+    /**
+     * The type of the button.
+     */
     type?: ButtonType;
+    /**
+     * The value of the button, used when submitting forms.
+     */
     value?: string;
+    /**
+     * The color variant of the button.
+     */
     variant?: ButtonVariant;
   }>(),
   {
@@ -59,6 +98,13 @@ function onClick(): void {
     router.push(props.to);
   }
 }
+
+const emit = defineEmits<{
+  /**
+   * The button has been clicked.
+   */
+  (e: "click"): void;
+}>();
 </script>
 
 <template>
@@ -68,7 +114,7 @@ function onClick(): void {
       <span class="visually-hidden" role="status">{{ status }}</span>
       <template v-if="text">&nbsp;</template>
     </slot>
-    <slot v-else-if="icon" name="icon">
+    <slot v-else-if="icon" name="iconOverride">
       <font-awesome-icon :icon="icon" />
       <template v-if="text">&nbsp;</template>
     </slot>

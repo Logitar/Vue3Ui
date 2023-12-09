@@ -5,10 +5,27 @@ import type { SpinnerVariant } from "@/types/components/AppSpinner";
 
 const props = withDefaults(
   defineProps<{
+    /**
+     * The spinner will have a growing animation, instead of a rotating animation.
+     */
     grow?: boolean;
+    /**
+     * The spinner will not include a hidden text for accessibility. You have to add this code directly below the spinner:
+     *
+     * `<span class="visually-hidden" role="status">Loading...</span>`
+     */
     inline?: boolean;
+    /**
+     * The spinner will have a smaller size, ideal for integrating it within other components, such as buttons.
+     */
     small?: boolean;
+    /**
+     * The hidden text for accessibility.
+     */
     text?: string;
+    /**
+     * The color variant of the spinner.
+     */
     variant?: SpinnerVariant;
   }>(),
   {
