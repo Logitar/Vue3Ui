@@ -10,6 +10,7 @@ const meta = {
     variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] },
   },
   args: {
+    close: "Close",
     dismissible: false,
     modelValue: false,
     show: true,
