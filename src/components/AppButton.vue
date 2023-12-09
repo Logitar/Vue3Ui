@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 import { useRouter, type RouteLocationRaw } from "vue-router";
 
@@ -71,7 +72,7 @@ const props = withDefaults(
     status: "Loading...",
     type: "button",
     variant: "primary",
-  }
+  },
 );
 
 const classes = computed<string[]>(() => {
@@ -99,7 +100,7 @@ function onClick(): void {
   }
 }
 
-const emit = defineEmits<{
+defineEmits<{
   /**
    * The button has been clicked.
    */
@@ -115,7 +116,7 @@ const emit = defineEmits<{
       <template v-if="text">&nbsp;</template>
     </slot>
     <slot v-else-if="icon" name="iconOverride">
-      <font-awesome-icon :icon="icon" />
+      <FontAwesomeIcon :icon="icon" />
       <template v-if="text">&nbsp;</template>
     </slot>
     <template v-if="text">{{ text }}</template>
