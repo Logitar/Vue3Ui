@@ -16,7 +16,7 @@ const props = withDefaults(
      */
     inline?: boolean;
     /**
-     * The spinner will have a smaller size, ideal for integrating it within other components, such as buttons.
+     * The spinner will have a smaller size, ideal when integrating it within other components, such as buttons.
      */
     small?: boolean;
     /**
@@ -33,7 +33,7 @@ const props = withDefaults(
     inline: false,
     small: false,
     text: "Loading...",
-  }
+  },
 );
 
 const classes = computed<string[]>(() => {

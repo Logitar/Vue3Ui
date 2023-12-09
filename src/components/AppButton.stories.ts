@@ -35,7 +35,6 @@ const meta = {
     size: "medium",
     status: "Loading...",
     text: "Click me!",
-    to: undefined,
     type: "button",
     value: undefined,
     variant: "primary",
