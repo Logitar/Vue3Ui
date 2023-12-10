@@ -5,6 +5,7 @@ import { computed } from "vue";
 
 import TarBadge from "./TarBadge.vue";
 import type { BadgeVariant } from "@/types/components/TarBadge";
+import { parseNumber } from "@/helpers/numberUtils";
 
 const props = withDefaults(
   defineProps<{
@@ -41,17 +42,7 @@ const props = withDefaults(
 );
 
 const alt = computed<string | undefined>(() => (props.displayName ? `${props.displayName}'s Avatar` : undefined));
-const height = computed<number | undefined>(() => {
-  if (typeof props.size === "number" && props.size > 0) {
-    return props.size;
-  } else if (typeof props.size === "string") {
-    const height = Number(props.size.trim());
-    if (!isNaN(height) && height > 0) {
-      return height;
-    }
-  }
-  return undefined;
-});
+const height = computed<number | undefined>(() => parseNumber(props.size) || undefined);
 const src = computed<string | undefined>(() => {
   if (props.url) {
     return props.url;
