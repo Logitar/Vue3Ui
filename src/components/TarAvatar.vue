@@ -3,8 +3,8 @@ import md5 from "md5";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 
-import AppBadge from "./AppBadge.vue";
-import type { BadgeVariant } from "@/types/components/AppBadge";
+import TarBadge from "./TarBadge.vue";
+import type { BadgeVariant } from "@/types/components/TarBadge";
 
 const props = withDefaults(
   defineProps<{
@@ -68,9 +68,9 @@ const style = computed(() => {
 <template>
   <span>
     <img v-if="src" class="rounded-circle" :src="src" :alt="alt" :height="height" />
-    <AppBadge v-else-if="icon" class="rounded-circle" :style="style" :variant="variant">
+    <TarBadge v-else-if="icon" class="rounded-circle" :style="style" :variant="variant">
       <FontAwesomeIcon :icon="icon" />
-    </AppBadge>
+    </TarBadge>
   </span>
 </template>
 

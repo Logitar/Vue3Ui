@@ -2,13 +2,13 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import { faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import AppButton from "./AppButton.vue";
+import TarButton from "./TarButton.vue";
 
 library.add(faBan, faChevronLeft, faFloppyDisk, faHouse, faMinus, faPlus, faRotate, faTrashCan, faXmark);
 
 const meta = {
-  title: "Components/AppButton",
-  component: AppButton,
+  title: "Components/TarButton",
+  component: TarButton,
   tags: ["autodocs"],
   argTypes: {
     icon: {
@@ -43,7 +43,7 @@ const meta = {
     value: undefined,
     variant: "primary",
   },
-} satisfies Meta<typeof AppButton>;
+} satisfies Meta<typeof TarButton>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -64,61 +64,61 @@ export const WithIcon: Story = {
 
 export const DifferentSizes: Story = {
   render: () => ({
-    components: { AppButton },
+    components: { TarButton },
     template: `
-      <AppButton size="small">Click me!</AppButton>
+      <TarButton size="small">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton size="medium">Click me!</AppButton>
+      <TarButton size="medium">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton size="large">Click me!</AppButton>
+      <TarButton size="large">Click me!</TarButton>
     `,
   }),
 };
 
 export const ColoredButtons: Story = {
   render: () => ({
-    components: { AppButton },
+    components: { TarButton },
     template: `
-      <AppButton variant="primary">Click me!</AppButton>
+      <TarButton variant="primary">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="secondary">Click me!</AppButton>
+      <TarButton variant="secondary">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="success">Click me!</AppButton>
+      <TarButton variant="success">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="danger">Click me!</AppButton>
+      <TarButton variant="danger">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="warning">Click me!</AppButton>
+      <TarButton variant="warning">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="info">Click me!</AppButton>
+      <TarButton variant="info">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="light">Click me!</AppButton>
+      <TarButton variant="light">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="dark">Click me!</AppButton>
+      <TarButton variant="dark">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton variant="link">Click me!</AppButton>
+      <TarButton variant="link">Click me!</TarButton>
     `,
   }),
 };
 
 export const OutlinedButtons: Story = {
   render: () => ({
-    components: { AppButton },
+    components: { TarButton },
     template: `
-      <AppButton outline variant="primary">Click me!</AppButton>
+      <TarButton outline variant="primary">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="secondary">Click me!</AppButton>
+      <TarButton outline variant="secondary">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="success">Click me!</AppButton>
+      <TarButton outline variant="success">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="danger">Click me!</AppButton>
+      <TarButton outline variant="danger">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="warning">Click me!</AppButton>
+      <TarButton outline variant="warning">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="info">Click me!</AppButton>
+      <TarButton outline variant="info">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="light">Click me!</AppButton>
+      <TarButton outline variant="light">Click me!</TarButton>
       <span class="me-2"></span>
-      <AppButton outline variant="dark">Click me!</AppButton>
+      <TarButton outline variant="dark">Click me!</TarButton>
     `,
   }),
 };

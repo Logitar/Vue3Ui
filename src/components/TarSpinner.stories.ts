@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import AppSpinner from "./AppSpinner.vue";
+import TarSpinner from "./TarSpinner.vue";
 
 const meta = {
-  title: "Components/AppSpinner",
-  component: AppSpinner,
+  title: "Components/TarSpinner",
+  component: TarSpinner,
   tags: ["autodocs"],
   argTypes: {
     variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] },
@@ -16,7 +16,7 @@ const meta = {
     text: "Loading...",
     variant: undefined,
   },
-} satisfies Meta<typeof AppSpinner>;
+} satisfies Meta<typeof TarSpinner>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -25,46 +25,46 @@ export const SimpleSpinner: Story = {};
 
 export const GrowSpinners: Story = {
   render: () => ({
-    components: { AppSpinner },
+    components: { TarSpinner },
     template: `
-      <AppSpinner grow variant="primary" />
+      <TarSpinner grow variant="primary" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="secondary" />
+      <TarSpinner grow variant="secondary" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="success" />
+      <TarSpinner grow variant="success" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="danger" />
+      <TarSpinner grow variant="danger" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="warning" />
+      <TarSpinner grow variant="warning" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="info" />
+      <TarSpinner grow variant="info" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="light" />
+      <TarSpinner grow variant="light" />
       <span class="me-2"></span>
-      <AppSpinner grow variant="dark" />
+      <TarSpinner grow variant="dark" />
     `,
   }),
 };
 
 export const InlineRotatingSpinners: Story = {
   render: () => ({
-    components: { AppSpinner },
+    components: { TarSpinner },
     template: `
-      <AppSpinner inline small variant="primary" />
+      <TarSpinner inline small variant="primary" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="secondary" />
+      <TarSpinner inline small variant="secondary" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="success" />
+      <TarSpinner inline small variant="success" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="danger" />
+      <TarSpinner inline small variant="danger" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="warning" />
+      <TarSpinner inline small variant="warning" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="info" />
+      <TarSpinner inline small variant="info" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="light" />
+      <TarSpinner inline small variant="light" />
       <span class="me-2"></span>
-      <AppSpinner inline small variant="dark" />
+      <TarSpinner inline small variant="dark" />
     `,
   }),
 };

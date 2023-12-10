@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { AlertVariant } from "@/types/components/AppAlert";
+import type { AlertVariant } from "@/types/components/TarAlert";
 
 const props = withDefaults(
   defineProps<{

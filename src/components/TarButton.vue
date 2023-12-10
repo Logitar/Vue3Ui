@@ -2,8 +2,8 @@
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 
-import AppSpinner from "@/components/AppSpinner.vue";
-import type { ButtonSize, ButtonType, ButtonVariant } from "@/types/components/AppButton";
+import TarSpinner from "@/components/TarSpinner.vue";
+import type { ButtonSize, ButtonType, ButtonVariant } from "@/types/components/TarButton";
 
 const props = withDefaults(
   defineProps<{
@@ -98,7 +98,7 @@ defineEmits<{
 <template>
   <button :class="classes" :disabled="disabled" :name="name" :type="type" :value="value">
     <slot v-if="loading" name="spinner">
-      <AppSpinner inline small />
+      <TarSpinner inline small />
       <span class="visually-hidden" role="status">{{ status }}</span>
       <template v-if="text">&nbsp;</template>
     </slot>

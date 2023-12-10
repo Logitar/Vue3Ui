@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { SpinnerVariant } from "@/types/components/AppSpinner";
+import type { SpinnerVariant } from "@/types/components/TarSpinner";
 
 const props = withDefaults(
   defineProps<{
