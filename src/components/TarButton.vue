@@ -102,7 +102,7 @@ defineEmits<{
       <span class="visually-hidden" role="status">{{ status }}</span>
       <template v-if="text">&nbsp;</template>
     </slot>
-    <slot v-else-if="icon" name="iconOverride">
+    <slot v-else-if="icon" name="icon-override">
       <FontAwesomeIcon :icon="icon" />
       <template v-if="text">&nbsp;</template>
     </slot>
