@@ -92,6 +92,10 @@ defineEmits<{
    */
   (e: "update:model-value", value?: string): void;
 }>();
+
+// TODO(fpion): max/min/step ⇒ date, month, week, time, datetime-local, number, range
+// TODO(fpion): test "type=[hidden]"
+// TODO(fpion): other components: checkbox, color, file, radio
 </script>
 
 <template>
