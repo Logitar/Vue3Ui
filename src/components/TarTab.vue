@@ -10,7 +10,7 @@ const unbindTab: ((tab: TabOptions) => void) | undefined = inject(unbindTabKey);
 const props = withDefaults(
   defineProps<{
     /**
-     * This tabs contents will be displayed initially.
+     * This tab contents will be displayed initially.
      */
     active?: boolean;
     /**
