@@ -12,10 +12,12 @@ const meta = {
   args: {
     disabled: false,
     id: "first-name",
+    inline: false,
     label: "First name",
     name: "firstName",
     placeholder: "Enter your first name in this field.",
     readonly: false,
+    required: true,
     type: "text",
   },
 } satisfies Meta<typeof TarInput>;

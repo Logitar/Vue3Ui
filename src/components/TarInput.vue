@@ -14,6 +14,10 @@ withDefaults(
      */
     id?: string;
     /**
+     * The input will be inline, meaning no label will be displayed. You can use the placeholder instead when using inline inputs.
+     */
+    inline?: boolean;
+    /**
      * The human readable caption of the input.
      */
     label?: string;
@@ -30,13 +34,19 @@ withDefaults(
      */
     readonly?: boolean;
     /**
+     * The input is required to submit TODO
+     */
+    required?: boolean;
+    /**
      * The type of the input.
      */
     type?: InputType;
   }>(),
   {
     disabled: false,
+    inline: false,
     readonly: false,
+    required: false,
     type: "text",
   },
 );
@@ -56,12 +66,29 @@ defineExpose({ focus });
 
 <template>
   <div class="mb-3">
-    <label v-if="label" :for="id" class="form-label">{{ label }}</label>
+    <slot v-if="!inline" name="label-override">
+      <label v-if="label" :for="id" class="form-label">
+        {{ label }}
+        <slot name="label-required" v-if="required">
+          <span class="text-danger">*</span>
+        </slot>
+      </label>
+    </slot>
     <slot name="before"></slot>
     <div class="input-group">
       <slot name="prepend"></slot>
       <slot>
-        <input :class="classes" :disabled="disabled" :id="id" :name="name" :placeholder="placeholder" :readonly="readonly" ref="inputRef" :type="type" />
+        <input
+          :class="classes"
+          :disabled="disabled"
+          :id="id"
+          :name="name"
+          :placeholder="placeholder"
+          :readonly="readonly"
+          ref="inputRef"
+          :required="required"
+          :type="type"
+        />
       </slot>
       <slot name="append"></slot>
     </div>
