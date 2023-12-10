@@ -15,6 +15,7 @@ const meta = {
     inline: false,
     label: "First name",
     max: 100,
+    modelValue: "",
     min: 1,
     name: "firstName",
     pattern: "",

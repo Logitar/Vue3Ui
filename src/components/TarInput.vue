@@ -31,6 +31,10 @@ const props = withDefaults(
      */
     min?: number | string;
     /**
+     * The value of the field.
+     */
+    modelValue?: string;
+    /**
      * The name of the input, used when submitting forms.
      */
     name?: string;
@@ -77,6 +81,13 @@ function focus(): void {
   inputRef.value?.focus();
 }
 defineExpose({ focus });
+
+defineEmits<{
+  /**
+   * The input value has been updated.
+   */
+  (e: "update:model-value", value?: string): void;
+}>();
 </script>
 
 <template>
@@ -106,6 +117,8 @@ defineExpose({ focus });
           ref="inputRef"
           :required="required"
           :type="type"
+          :value="modelValue"
+          @input="$emit('update:model-value', ($event.target as HTMLInputElement).value)"
         />
       </slot>
       <slot name="append"></slot>
