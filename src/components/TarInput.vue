@@ -2,8 +2,9 @@
 import { computed, ref } from "vue";
 
 import type { InputType } from "@/types/components/TarInput";
+import { parseNumber } from "@/helpers/numberUtils";
 
-withDefaults(
+const props = withDefaults(
   defineProps<{
     /**
      * The input will display with a disabled style and will not react to events.
@@ -22,9 +23,21 @@ withDefaults(
      */
     label?: string;
     /**
+     * The maximum length (in characters) of a valid value.
+     */
+    max?: number | string;
+    /**
+     * The minimum length (in characters) of a valid value.
+     */
+    min?: number | string;
+    /**
      * The name of the input, used when submitting forms.
      */
     name?: string;
+    /**
+     * The regular expression a valid value must match.
+     */
+    pattern?: string;
     /**
      * This text will appear inside the input when no value has been set.
      */
@@ -57,6 +70,8 @@ const classes = computed<string[]>(() => {
   const classes = ["form-control"];
   return classes;
 });
+const maxLength = computed<number | undefined>(() => parseNumber(props.max) || undefined); // TODO(fpion): check input type is text, search, url, tel, email, or password
+const minLength = computed<number | undefined>(() => parseNumber(props.min) || undefined); // TODO(fpion): check input type is text, search, url, tel, email, or password
 
 function focus(): void {
   inputRef.value?.focus();
@@ -82,7 +97,10 @@ defineExpose({ focus });
           :class="classes"
           :disabled="disabled"
           :id="id"
+          :maxlength="maxLength"
+          :minlength="minLength"
           :name="name"
+          :pattern="pattern"
           :placeholder="placeholder"
           :readonly="readonly"
           ref="inputRef"
