@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, onUnmounted } from "vue";
+import { computed, inject, onMounted, onUnmounted, onUpdated } from "vue";
+import { nanoid } from "nanoid";
 
 import { bindTabKey, unbindTabKey, type TabOptions } from "@/types/components/TarTabs";
 
@@ -31,8 +32,6 @@ const props = withDefaults(
   },
 );
 
-// const id = ref<string>(uuidv4()); // TODO(fpion): generate random nanoid if unspecified
-
 const classes = computed<string[]>(() => {
   const classes = ["tab-pane", "fade"];
   if (props.active) {
@@ -41,8 +40,9 @@ const classes = computed<string[]>(() => {
   }
   return classes;
 });
+const tabId = computed<string>(() => props.id ?? nanoid());
 
-const options = computed<TabOptions>(() => ({ active: props.active, disabled: props.disabled, id: props.id, title: props.title }));
+const options = computed<TabOptions>(() => ({ active: props.active, disabled: props.disabled, id: tabId.value, title: props.title }));
 onMounted(() => {
   if (bindTab) {
     bindTab(options.value);
@@ -53,11 +53,15 @@ onUnmounted(() => {
     unbindTab(options.value);
   }
 });
+onUpdated(() => {
+  if (bindTab) {
+    bindTab(options.value);
+  }
+});
 </script>
 
 <template>
-  <!-- TODO(fpion): should tabindex be different for each tab? -->
-  <div :class="classes" :id="`tab_${id}_pane`" role="tabpanel" :aria-labelledby="`tab_${id}_head`" tabindex="0">
+  <div :class="classes" :id="`tab_${tabId}_pane`" role="tabpanel" :aria-labelledby="`tab_${tabId}_head`" tabindex="0">
     <slot></slot>
   </div>
 </template>
