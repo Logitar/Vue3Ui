@@ -51,7 +51,7 @@ const props = withDefaults(
      */
     readonly?: boolean;
     /**
-     * The input is required to submit TODO
+     * The input is required to submit the form its contained into.
      */
     required?: boolean;
     /**
@@ -74,8 +74,12 @@ const classes = computed<string[]>(() => {
   const classes = ["form-control"];
   return classes;
 });
-const maxLength = computed<number | undefined>(() => parseNumber(props.max) || undefined); // TODO(fpion): check input type is text, search, url, tel, email, or password
-const minLength = computed<number | undefined>(() => parseNumber(props.min) || undefined); // TODO(fpion): check input type is text, search, url, tel, email, or password
+
+const isTextualInput = computed<boolean>(() => ["text", "search", "url", "tel", "email", "password"].includes(props.type ?? "text"));
+const inputPattern = computed<string | undefined>(() => (isTextualInput.value ? props.pattern : undefined));
+const inputPlaceholder = computed<string | undefined>(() => (isTextualInput.value /*|| props.type === "number"*/ ? props.placeholder : undefined)); // TODO(fpion): handle number inputs
+const maxLength = computed<number | undefined>(() => (isTextualInput.value ? parseNumber(props.max) || undefined : undefined));
+const minLength = computed<number | undefined>(() => (isTextualInput.value ? parseNumber(props.min) || undefined : undefined));
 
 function focus(): void {
   inputRef.value?.focus();
@@ -111,8 +115,8 @@ defineEmits<{
           :maxlength="maxLength"
           :minlength="minLength"
           :name="name"
-          :pattern="pattern"
-          :placeholder="placeholder"
+          :pattern="inputPattern"
+          :placeholder="inputPlaceholder"
           :readonly="readonly"
           ref="inputRef"
           :required="required"

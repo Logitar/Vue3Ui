@@ -1,1 +1,1 @@
-export type InputType = "text" | undefined;
+export type InputType = "text" | "search" | "url" | "tel" | "email" | "password" | undefined;
