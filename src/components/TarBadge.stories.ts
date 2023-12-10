@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 
-import AppBadge from "./AppBadge.vue";
+import TarBadge from "./TarBadge.vue";
 
 const meta = {
-  title: "Components/AppBadge",
-  component: AppBadge,
+  title: "Components/TarBadge",
+  component: TarBadge,
   tags: ["autodocs"],
   argTypes: {
     variant: { control: "select", options: ["primary", "secondary", "success", "danger", "warning", "info", "light", "dark"] },
@@ -14,13 +14,13 @@ const meta = {
     variant: "primary",
   },
   render: (args) => ({
-    components: { AppBadge },
+    components: { TarBadge },
     setup() {
       return { args };
     },
-    template: `<AppBadge v-bind="args">New!</AppBadge>`,
+    template: `<TarBadge v-bind="args">New!</TarBadge>`,
   }),
-} satisfies Meta<typeof AppBadge>;
+} satisfies Meta<typeof TarBadge>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -33,23 +33,23 @@ export const Rounded: Story = {
 
 export const ColoredBadges: Story = {
   render: () => ({
-    components: { AppBadge },
+    components: { TarBadge },
     template: `
-      <AppBadge show variant="primary">New!</AppBadge>
+      <TarBadge show variant="primary">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="secondary">New!</AppBadge>
+      <TarBadge show variant="secondary">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="success">New!</AppBadge>
+      <TarBadge show variant="success">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="danger">New!</AppBadge>
+      <TarBadge show variant="danger">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="warning">New!</AppBadge>
+      <TarBadge show variant="warning">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="info">New!</AppBadge>
+      <TarBadge show variant="info">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="light">New!</AppBadge>
+      <TarBadge show variant="light">New!</TarBadge>
       <span class="me-2"></span>
-      <AppBadge show variant="dark">New!</AppBadge>
+      <TarBadge show variant="dark">New!</TarBadge>
     `,
   }),
 };

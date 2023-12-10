@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { BadgeVariant } from "@/types/components/AppBadge";
+import type { BadgeVariant } from "@/types/components/TarBadge";
 
 const props = withDefaults(
   defineProps<{
