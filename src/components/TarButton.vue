@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 
 import TarSpinner from "@/components/TarSpinner.vue";
-import type { ButtonSize, ButtonType, ButtonVariant } from "@/types/components/AppButton";
+import type { ButtonSize, ButtonType, ButtonVariant } from "@/types/components/TarButton";
 
 const props = withDefaults(
   defineProps<{
