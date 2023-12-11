@@ -88,7 +88,7 @@ const props = withDefaults(
 const inputRef = ref<HTMLInputElement>();
 
 const classes = computed<string[]>(() => {
-  const classes = ["form-control"];
+  const classes = [props.type === "range" ? "form-range" : "form-control"];
   return classes;
 });
 
