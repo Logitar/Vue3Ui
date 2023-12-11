@@ -59,6 +59,10 @@ const props = withDefaults(
      */
     placeholder?: string;
     /**
+     * When the input is readonly, this will display the value as text instead of an input, preserving margin and padding, but removing form field styling.
+     */
+    plaintext?: boolean;
+    /**
      * The value of the input will not be editable.
      */
     readonly?: boolean;
@@ -79,6 +83,7 @@ const props = withDefaults(
   {
     disabled: false,
     inline: false,
+    plaintext: false,
     readonly: false,
     required: false,
     type: "text",
@@ -88,7 +93,14 @@ const props = withDefaults(
 const inputRef = ref<HTMLInputElement>();
 
 const classes = computed<string[]>(() => {
-  const classes = [props.type === "range" ? "form-range" : "form-control"];
+  const classes: string[] = [];
+  if (props.type === "range") {
+    classes.push("form-range");
+  } else if (props.readonly && props.plaintext) {
+    classes.push("form-control-plaintext");
+  } else {
+    classes.push("form-control");
+  }
   return classes;
 });
 

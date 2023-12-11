@@ -20,8 +20,10 @@ const meta = {
     name: "firstName",
     pattern: "",
     placeholder: "Enter your first name in this field.",
+    plaintext: false,
     readonly: false,
     required: true,
+    step: 0,
     type: "text",
   },
 } satisfies Meta<typeof TarInput>;
