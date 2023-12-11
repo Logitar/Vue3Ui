@@ -7,6 +7,10 @@ import { parseNumber } from "@/helpers/numberUtils";
 const props = withDefaults(
   defineProps<{
     /**
+     * When adding a form input text, this is the unique identifier of the form text element. This will specify the `aria-describedby` attribute to ensure assistive technologies will announce the text when the user focuses or enters the control.
+     */
+    describedBy?: string;
+    /**
      * The input will display with a disabled style and will not react to events.
      */
     disabled?: boolean;
@@ -208,6 +212,7 @@ defineEmits<{
       <slot name="prepend"></slot>
       <slot>
         <input
+          :aria-describedby="describedBy"
           :class="classes"
           :disabled="disabled"
           :id="id"
