@@ -27,23 +27,23 @@ const props = withDefaults(
      */
     label?: string;
     /**
-     * For textual inputs (text, search, url, tel, email, and password), this is the maximum length in characters of a valid value.
-     * For numeric inputs (number and range), this is the maximum valid numeral value.
-     * For date inputs, this is the maximum date, using the `YYYY-MM-DD` format.
-     * For time inputs, this is the maximum time, using the `HH:MM` format.
-     * For month inputs, this is the maximum month, using the `YYYY-MM` format.
-     * For week inputs, this is the maximum week, using the `YYYY-WNN` format, NN being the week number.
-     * For datetime-local inputs, this is the maximum moment, using the `YYYY-MM-DDTHH:mm` format.
+     * - For textual inputs (text, search, url, tel, email, and password), this is the maximum length in characters of a valid value.
+     * - For numeric inputs (number and range), this is the maximum valid numeral value.
+     * - For date inputs, this is the maximum date, using the `YYYY-MM-DD` format.
+     * - For time inputs, this is the maximum time, using the `HH:MM` format.
+     * - For month inputs, this is the maximum month, using the `YYYY-MM` format.
+     * - For week inputs, this is the maximum week, using the `YYYY-WNN` format, NN being the week number.
+     * - For datetime-local inputs, this is the maximum moment, using the `YYYY-MM-DDTHH:mm` format.
      */
     max?: number | string;
     /**
-     * For textual inputs (text, search, url, tel, email, and password), this is the minimum length in characters of a valid value.
-     * For numeric inputs (number and range), this is the minimum valid numeral value.
-     * For date inputs, this is the minimum date, using the `YYYY-MM-DD` format.
-     * For time inputs, this is the minimum time, using the `HH:MM` format.
-     * For month inputs, this is the minimum month, using the `YYYY-MM` format.
-     * For week inputs, this is the minimum week, using the `YYYY-WNN` format, NN being the week number.
-     * For datetime-local inputs, this is the minimum moment, using the `YYYY-MM-DDTHH:mm` format.
+     * - For textual inputs (text, search, url, tel, email, and password), this is the minimum length in characters of a valid value.
+     * - For numeric inputs (number and range), this is the minimum valid numeral value.
+     * - For date inputs, this is the minimum date, using the `YYYY-MM-DD` format.
+     * - For time inputs, this is the minimum time, using the `HH:MM` format.
+     * - For month inputs, this is the minimum month, using the `YYYY-MM` format.
+     * - For week inputs, this is the minimum week, using the `YYYY-WNN` format, NN being the week number.
+     * - For datetime-local inputs, this is the minimum moment, using the `YYYY-MM-DDTHH:mm` format.
      */
     min?: number | string;
     /**
@@ -79,8 +79,8 @@ const props = withDefaults(
      */
     size?: InputSize;
     /**
-     * The value of each increase or decrease when using a numeric input (number and range).
-     * For date/time inputs (date, time, month, week, and datetime-local), the value can be a number or "any". Its interpretation depends on the input type, so please consult documentation about inputs if you are unsure about how to use the step for those input types.
+     * - For numeric inputs (number and range), the value of each increase or decrease.
+     * - For date/time inputs (date, time, month, week, and datetime-local), the value can be a number or "any". Its interpretation depends on the input type, so please consult documentation about inputs if you are unsure about how to use the step for those input types.
      */
     step?: number | string;
     /**
