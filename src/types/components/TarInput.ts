@@ -1,3 +1,4 @@
+export type InputSize = "small" | "medium" | "large" | undefined;
 export type InputType =
   | "text"
   | "search"

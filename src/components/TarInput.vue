@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-import type { InputType } from "@/types/components/TarInput";
+import type { InputSize, InputType } from "@/types/components/TarInput";
 import { parseNumber } from "@/helpers/numberUtils";
 
 const props = withDefaults(
@@ -71,6 +71,10 @@ const props = withDefaults(
      */
     required?: boolean;
     /**
+     * The size of the input.
+     */
+    size?: InputSize;
+    /**
      * The value of each increase or decrease when using a numeric input (number and range).
      * For date/time inputs (date, time, month, week, and datetime-local), the value can be a number or "any". Its interpretation depends on the input type, so please consult documentation about inputs if you are unsure about how to use the step for those input types.
      */
@@ -100,6 +104,14 @@ const classes = computed<string[]>(() => {
     classes.push("form-control-plaintext");
   } else {
     classes.push("form-control");
+  }
+  switch (props.size) {
+    case "large":
+      classes.push("form-control-lg");
+      break;
+    case "small":
+      classes.push("form-control-sm");
+      break;
   }
   return classes;
 });
