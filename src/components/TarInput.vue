@@ -23,11 +23,23 @@ const props = withDefaults(
      */
     label?: string;
     /**
-     * The maximum length (in characters) of a valid value.
+     * For textual inputs (text, search, url, tel, email, and password), this is the maximum length in characters of a valid value.
+     * For numeric inputs (number and range), this is the maximum valid numeral value.
+     * For date inputs, this is the maximum date, using the `YYYY-MM-DD` format.
+     * For time inputs, this is the maximum time, using the `HH:MM` format.
+     * For month inputs, this is the maximum month, using the `YYYY-MM` format.
+     * For week inputs, this is the maximum week, using the `YYYY-WNN` format, NN being the week number.
+     * For datetime-local inputs, this is the maximum moment, using the `YYYY-MM-DDTHH:mm` format.
      */
     max?: number | string;
     /**
-     * The minimum length (in characters) of a valid value.
+     * For textual inputs (text, search, url, tel, email, and password), this is the minimum length in characters of a valid value.
+     * For numeric inputs (number and range), this is the minimum valid numeral value.
+     * For date inputs, this is the minimum date, using the `YYYY-MM-DD` format.
+     * For time inputs, this is the minimum time, using the `HH:MM` format.
+     * For month inputs, this is the minimum month, using the `YYYY-MM` format.
+     * For week inputs, this is the minimum week, using the `YYYY-WNN` format, NN being the week number.
+     * For datetime-local inputs, this is the minimum moment, using the `YYYY-MM-DDTHH:mm` format.
      */
     min?: number | string;
     /**
@@ -39,11 +51,11 @@ const props = withDefaults(
      */
     name?: string;
     /**
-     * The regular expression a valid value must match.
+     * The regular expression a valid value must match. Only textual inputs (text, search, url, tel, email, and password) support this property.
      */
     pattern?: string;
     /**
-     * This text will appear inside the input when no value has been set.
+     * This text will appear inside the input when no value has been set. Only textual and number inputs (number, text, search, url, tel, email, and password) support this property.
      */
     placeholder?: string;
     /**
@@ -54,6 +66,11 @@ const props = withDefaults(
      * The input is required to submit the form its contained into.
      */
     required?: boolean;
+    /**
+     * The value of each increase or decrease when using a numeric input (number and range).
+     * For date/time inputs (date, time, month, week, and datetime-local), the value can be a number or "any". Its interpretation depends on the input type, so please consult documentation about inputs if you are unsure about how to use the step for those input types.
+     */
+    step?: number | string;
     /**
      * The type of the input.
      */
@@ -75,11 +92,69 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 
-const isTextualInput = computed<boolean>(() => ["text", "search", "url", "tel", "email", "password"].includes(props.type ?? "text"));
-const inputPattern = computed<string | undefined>(() => (isTextualInput.value ? props.pattern : undefined));
-const inputPlaceholder = computed<string | undefined>(() => (isTextualInput.value /*|| props.type === "number"*/ ? props.placeholder : undefined)); // TODO(fpion): handle number inputs
-const maxLength = computed<number | undefined>(() => (isTextualInput.value ? parseNumber(props.max) || undefined : undefined));
-const minLength = computed<number | undefined>(() => (isTextualInput.value ? parseNumber(props.min) || undefined : undefined));
+const isDateTimeInput = computed<boolean>(() => {
+  switch (props.type) {
+    case "date":
+    case "datetime-local":
+    case "month":
+    case "time":
+    case "week":
+      return true;
+  }
+  return false;
+});
+const isNumericInput = computed<boolean>(() => {
+  switch (props.type) {
+    case "number":
+    case "range":
+      return true;
+  }
+  return false;
+});
+const isTextualInput = computed<boolean>(() => {
+  switch (props.type) {
+    case "email":
+    case "password":
+    case "search":
+    case "tel":
+    case "text":
+    case "url":
+    case undefined:
+      return true;
+  }
+  return false;
+});
+const maxLength = computed<number | undefined>(() => {
+  return isTextualInput.value ? parseNumber(props.max) || undefined : undefined;
+});
+const maxValue = computed<number | string | undefined>(() => {
+  if (isNumericInput.value) {
+    return parseNumber(props.max);
+  } else if (isDateTimeInput.value) {
+    return props.max;
+  }
+  return undefined;
+});
+const minLength = computed<number | undefined>(() => {
+  return isTextualInput.value ? parseNumber(props.min) || undefined : undefined;
+});
+const minValue = computed<number | string | undefined>(() => {
+  if (isNumericInput.value) {
+    return parseNumber(props.min);
+  } else if (isDateTimeInput.value) {
+    return props.min;
+  }
+  return undefined;
+});
+const inputStep = computed<number | string | undefined>(() => {
+  if (isNumericInput.value) {
+    return parseNumber(props.step);
+  } else if (isDateTimeInput.value) {
+    const step = typeof props.step === "string" ? props.step.trim() : props.step;
+    return step === "any" ? step : parseNumber(step);
+  }
+  return undefined;
+});
 
 function focus(): void {
   inputRef.value?.focus();
@@ -92,10 +167,6 @@ defineEmits<{
    */
   (e: "update:model-value", value?: string): void;
 }>();
-
-// TODO(fpion): max/min/step ⇒ date, month, week, time, datetime-local, number, range
-// TODO(fpion): test "type=[hidden]"
-// TODO(fpion): other components: checkbox, color, file, radio
 </script>
 
 <template>
@@ -117,13 +188,16 @@ defineEmits<{
           :disabled="disabled"
           :id="id"
           :maxlength="maxLength"
+          :max="maxValue"
           :minlength="minLength"
+          :min="minValue"
           :name="name"
-          :pattern="inputPattern"
-          :placeholder="inputPlaceholder"
+          :pattern="pattern"
+          :placeholder="placeholder"
           :readonly="readonly"
           ref="inputRef"
           :required="required"
+          :step="inputStep"
           :type="type"
           :value="modelValue"
           @input="$emit('update:model-value', ($event.target as HTMLInputElement).value)"
