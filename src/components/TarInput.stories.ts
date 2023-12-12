@@ -46,7 +46,7 @@ export const Primary: Story = {};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Inputs",
-  args: { id: "first-name-3" },
+  args: { id: "first-name-2" },
   render: (args) => ({
     components: { TarInput },
     setup() {
