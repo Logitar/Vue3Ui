@@ -75,7 +75,7 @@ export const InputWithHelpText: Story = {
     template: `
       <TarInput v-bind="args">
         <template #after>
-          <div id="first-name-help" class="form-text">We will not disclose it to anyone, we promise!</div
+          <div id="first-name-help" class="form-text">We will not disclose it to anyone, we promise!</div>
         </template>
       </TarInput>
     `,

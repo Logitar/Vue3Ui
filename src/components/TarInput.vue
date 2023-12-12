@@ -21,7 +21,7 @@ const props = withDefaults(
     /**
      * The input will be inline, meaning no label will be displayed. You can use the placeholder instead when using inline inputs.
      */
-    inline?: boolean;
+    inline?: boolean; // TODO(fpion): is this really necessary? can we just omit the label property?
     /**
      * The human readable caption of the input.
      */
