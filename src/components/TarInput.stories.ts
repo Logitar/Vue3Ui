@@ -46,7 +46,7 @@ export const Primary: Story = {};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Inputs",
-  args: { id: "first-name-3" },
+  args: { id: "first-name-2" },
   render: (args) => ({
     components: { TarInput },
     setup() {
@@ -75,7 +75,7 @@ export const InputWithHelpText: Story = {
     template: `
       <TarInput v-bind="args">
         <template #after>
-          <div id="first-name-help" class="form-text">We will not disclose it to anyone, we promise!</div
+          <div id="first-name-help" class="form-text">We will not disclose it to anyone, we promise!</div>
         </template>
       </TarInput>
     `,
