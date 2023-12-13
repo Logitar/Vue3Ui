@@ -35,21 +35,21 @@ export const ColoredBadges: Story = {
   render: () => ({
     components: { TarBadge },
     template: `
-      <TarBadge show variant="primary">New!</TarBadge>
+      <TarBadge show variant="primary">primary</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="secondary">New!</TarBadge>
+      <TarBadge show variant="secondary">secondary</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="success">New!</TarBadge>
+      <TarBadge show variant="success">success</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="danger">New!</TarBadge>
+      <TarBadge show variant="danger">danger</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="warning">New!</TarBadge>
+      <TarBadge show variant="warning">warning</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="info">New!</TarBadge>
+      <TarBadge show variant="info">info</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="light">New!</TarBadge>
+      <TarBadge show variant="light">light</TarBadge>
       <span class="me-2"></span>
-      <TarBadge show variant="dark">New!</TarBadge>
+      <TarBadge show variant="dark">dark</TarBadge>
     `,
   }),
 };
