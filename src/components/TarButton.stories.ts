@@ -79,23 +79,23 @@ export const ColoredButtons: Story = {
   render: () => ({
     components: { TarButton },
     template: `
-      <TarButton variant="primary">Click me!</TarButton>
+      <TarButton variant="primary">primary</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="secondary">Click me!</TarButton>
+      <TarButton variant="secondary">secondary</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="success">Click me!</TarButton>
+      <TarButton variant="success">success</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="danger">Click me!</TarButton>
+      <TarButton variant="danger">danger</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="warning">Click me!</TarButton>
+      <TarButton variant="warning">warning</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="info">Click me!</TarButton>
+      <TarButton variant="info">info</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="light">Click me!</TarButton>
+      <TarButton variant="light">light</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="dark">Click me!</TarButton>
+      <TarButton variant="dark">dark</TarButton>
       <span class="me-2"></span>
-      <TarButton variant="link">Click me!</TarButton>
+      <TarButton variant="link">link</TarButton>
     `,
   }),
 };
@@ -104,21 +104,21 @@ export const OutlinedButtons: Story = {
   render: () => ({
     components: { TarButton },
     template: `
-      <TarButton outline variant="primary">Click me!</TarButton>
+      <TarButton outline variant="primary">primary</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="secondary">Click me!</TarButton>
+      <TarButton outline variant="secondary">secondary</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="success">Click me!</TarButton>
+      <TarButton outline variant="success">success</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="danger">Click me!</TarButton>
+      <TarButton outline variant="danger">danger</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="warning">Click me!</TarButton>
+      <TarButton outline variant="warning">warning</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="info">Click me!</TarButton>
+      <TarButton outline variant="info">info</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="light">Click me!</TarButton>
+      <TarButton outline variant="light">light</TarButton>
       <span class="me-2"></span>
-      <TarButton outline variant="dark">Click me!</TarButton>
+      <TarButton outline variant="dark">dark</TarButton>
     `,
   }),
 };

@@ -38,14 +38,14 @@ export const ColoredAlerts: Story = {
   render: () => ({
     components: { TarAlert },
     template: `
-      <TarAlert show variant="primary">This is an <strong>important</strong> message.</TarAlert>
-      <TarAlert show variant="secondary">This is another message.</TarAlert>
-      <TarAlert show variant="success"><strong>Success!</strong> The requested operation has completed.</TarAlert>
-      <TarAlert show variant="danger"><strong>Error!</strong> An unexpected error occurred.</TarAlert>
-      <TarAlert show variant="warning"><strong>Warning!</strong> There are validation errors in the form below.</TarAlert>
-      <TarAlert show variant="info">Some useful info here...</TarAlert>
-      <TarAlert show variant="light">Works better in a dark theme.</TarAlert>
-      <TarAlert show variant="dark">Works better in a light theme.</TarAlert>
+      <TarAlert show variant="primary">primary: this is an <strong>important</strong> message.</TarAlert>
+      <TarAlert show variant="secondary">secondary: this is another message.</TarAlert>
+      <TarAlert show variant="success"><strong>success</strong>: the requested operation has completed.</TarAlert>
+      <TarAlert show variant="danger"><strong>danger</strong>: an unexpected error occurred.</TarAlert>
+      <TarAlert show variant="warning"><strong>warning</strong>: there are validation errors in the form below.</TarAlert>
+      <TarAlert show variant="info">info: some useful info here...</TarAlert>
+      <TarAlert show variant="light">light: works better in a dark theme.</TarAlert>
+      <TarAlert show variant="dark">dark: works better in a light theme.</TarAlert>
     `,
   }),
 };
