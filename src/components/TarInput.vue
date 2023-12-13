@@ -15,6 +15,10 @@ const props = withDefaults(
      */
     disabled?: boolean;
     /**
+     * The label will appear floating in the input, moving when the value is modified. The `label` and `placeholder` properties are required for floating labels to function properly.
+     */
+    floating?: boolean;
+    /**
      * The unique identifier of the input.
      */
     id?: string;
@@ -199,7 +203,7 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot v-if="!inline" name="label-override">
+    <slot v-if="!inline && !floating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
         <slot name="label-required" v-if="required">
@@ -210,7 +214,39 @@ defineEmits<{
     <slot name="before"></slot>
     <div class="input-group">
       <slot name="prepend"></slot>
-      <slot>
+      <div v-if="floating" class="form-floating">
+        <slot>
+          <input
+            :aria-describedby="describedBy"
+            :class="classes"
+            :disabled="disabled"
+            :id="id"
+            :maxlength="maxLength"
+            :max="maxValue"
+            :minlength="minLength"
+            :min="minValue"
+            :name="name"
+            :pattern="pattern"
+            :placeholder="placeholder"
+            :readonly="readonly"
+            ref="inputRef"
+            :required="required"
+            :step="inputStep"
+            :type="type"
+            :value="modelValue"
+            @input="$emit('update:model-value', ($event.target as HTMLInputElement).value)"
+          />
+        </slot>
+        <slot name="label-override">
+          <label :for="id">
+            {{ label }}
+            <slot name="label-required" v-if="required">
+              <span class="text-danger">*</span>
+            </slot>
+          </label>
+        </slot>
+      </div>
+      <slot v-else>
         <input
           :aria-describedby="describedBy"
           :class="classes"

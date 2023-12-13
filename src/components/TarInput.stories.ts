@@ -21,9 +21,10 @@ const meta = {
   args: {
     describedBy: "",
     disabled: false,
+    floating: false,
     id: "first-name",
     inline: false,
-    label: "First name",
+    label: "First Name",
     max: 100,
     min: 1,
     modelValue: "",
@@ -43,6 +44,10 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {};
+
+export const Floating: Story = {
+  args: { floating: true },
+};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Inputs",
