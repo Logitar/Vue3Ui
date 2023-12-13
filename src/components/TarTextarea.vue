@@ -23,10 +23,6 @@ const props = withDefaults(
      */
     id?: string;
     /**
-     * The textarea will be inline, meaning no label will be displayed. You can use the placeholder instead when using inline textarea.
-     */
-    inline?: boolean; // TODO(fpion): is this really necessary? can we just omit the label property?
-    /**
      * The human readable caption of the textarea.
      */
     label?: string;
@@ -115,7 +111,7 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot v-if="!inline" name="label-override">
+    <slot name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
         <slot name="label-required" v-if="required">

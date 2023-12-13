@@ -14,7 +14,6 @@ const meta = {
     describedBy: "",
     disabled: false,
     id: "description",
-    inline: false,
     label: "Description",
     max: 1000,
     min: 0,
@@ -76,10 +75,6 @@ export const Disabled: Story = {
     disabled: true,
     id: "description-disabled",
   },
-};
-
-export const InlineTextarea: Story = {
-  args: { inline: true },
 };
 
 export const ReadonlyVsReadonlyPlaintextInputs: Story = {
