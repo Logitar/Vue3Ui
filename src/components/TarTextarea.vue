@@ -19,6 +19,10 @@ const props = withDefaults(
      */
     disabled?: boolean;
     /**
+     * The label will appear floating in the textarea, moving when the value is modified. The `label` and `placeholder` properties are required for floating labels to function properly.
+     */
+    floating?: boolean;
+    /**
      * The unique identifier of the textarea.
      */
     id?: string;
@@ -95,6 +99,10 @@ const classes = computed<string[]>(() => {
   }
   return classes;
 });
+const height = computed<string | undefined>(() => {
+  const rows = parseNumber(props.rows);
+  return rows ? `${rows * 1.5}rem` : undefined;
+});
 
 function focus(): void {
   textareaRef.value?.focus();
@@ -111,7 +119,7 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot name="label-override">
+    <slot v-if="!floating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
         <slot name="label-required" v-if="required">
@@ -120,7 +128,37 @@ defineEmits<{
       </label>
     </slot>
     <slot name="before"></slot>
-    <slot>
+    <div v-if="floating" class="form-floating">
+      <slot>
+        <textarea
+          :aria-describedby="describedBy"
+          :class="classes"
+          :cols="parseNumber(cols)"
+          :disabled="disabled"
+          :id="id"
+          :maxlength="parseNumber(props.max) || undefined"
+          :minlength="parseNumber(props.min) || undefined"
+          :name="name"
+          :placeholder="placeholder"
+          :readonly="readonly"
+          ref="textareaRef"
+          :required="required"
+          :style="{ height }"
+          :value="modelValue"
+          @input="$emit('update:model-value', ($event.target as HTMLTextAreaElement).value)"
+        >
+        </textarea>
+      </slot>
+      <slot name="label-override">
+        <label :for="id">
+          {{ label }}
+          <slot name="label-required" v-if="required">
+            <span class="text-danger">*</span>
+          </slot>
+        </label>
+      </slot>
+    </div>
+    <slot v-else>
       <textarea
         :aria-describedby="describedBy"
         :class="classes"

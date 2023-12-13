@@ -13,6 +13,7 @@ const meta = {
     cols: 20,
     describedBy: "",
     disabled: false,
+    floating: false,
     id: "description",
     label: "Description",
     max: 1000,
@@ -32,6 +33,13 @@ export default meta;
 type Story = StoryObj<typeof TarTextarea>;
 
 export const Primary: Story = {};
+
+export const Floating: Story = {
+  args: {
+    floating: true,
+    id: "floating",
+  },
+};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Textarea",
