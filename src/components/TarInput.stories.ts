@@ -23,7 +23,6 @@ const meta = {
     disabled: false,
     floating: false,
     id: "first-name",
-    inline: false,
     label: "First Name",
     max: 100,
     min: 1,
@@ -93,18 +92,6 @@ export const Disabled: Story = {
     id: "first-name-disabled",
     required: false,
   },
-};
-
-export const InlineInputs: Story = {
-  render: () => ({
-    components: { TarInput },
-    template: `
-      <div class="row">
-        <TarInput class="col" inline placeholder="First Name" />
-        <TarInput class="col" inline placeholder="Last Name" />
-      </div>
-    `,
-  }),
 };
 
 export const ReadonlyVsReadonlyPlaintextInputs: Story = {
