@@ -45,7 +45,10 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {};
 
 export const Floating: Story = {
-  args: { floating: true },
+  args: {
+    floating: true,
+    id: "floating",
+  },
 };
 
 export const RequiredVsOptional: Story = {
