@@ -114,9 +114,9 @@ export const DifferentSizes: Story = {
   render: () => ({
     components: { TarInput },
     template: `
-      <TarInput inline placeholder="Small Input" size="small" />
-      <TarInput inline placeholder="Medium Input" size="medium" />
-      <TarInput inline placeholder="Large Input" size="large" />
+      <TarInput placeholder="Small Input" size="small" />
+      <TarInput placeholder="Medium Input" size="medium" />
+      <TarInput placeholder="Large Input" size="large" />
     `,
   }),
 };

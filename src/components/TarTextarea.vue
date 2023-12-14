@@ -73,7 +73,6 @@ const props = withDefaults(
   }>(),
   {
     disabled: false,
-    inline: false,
     plaintext: false,
     readonly: false,
     required: false,

@@ -105,9 +105,9 @@ export const DifferentSizes: Story = {
   render: () => ({
     components: { TarTextarea },
     template: `
-      <TarTextarea inline placeholder="Small Textarea" size="small" />
-      <TarTextarea inline placeholder="Medium Textarea" size="medium" />
-      <TarTextarea inline placeholder="Large Textarea" size="large" />
+      <TarTextarea placeholder="Small Textarea" size="small" />
+      <TarTextarea placeholder="Medium Textarea" size="medium" />
+      <TarTextarea placeholder="Large Textarea" size="large" />
     `,
   }),
 };
