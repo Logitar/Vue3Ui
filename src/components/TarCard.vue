@@ -9,16 +9,13 @@ defineProps<{
    */
   title?: string;
 }>();
-
-// TODO(fpion): <!-- <img src="/francis-pion.jpg" class="card-img-top" alt="Photo de Francis Pion" /> -->
-// TODO(fpion): <!-- <img src="/francis-pion.jpg" class="card-img-bottom" alt="Photo de Francis Pion" /> -->
 </script>
 
 <template>
   <div class="card">
     <slot name="header"></slot>
     <slot name="image-top">
-      <!-- TODO(fpion): top image -->
+      <!-- TODO(fpion): card-img-top -->
     </slot>
     <slot name="contents">
       <div class="card-body">
@@ -32,7 +29,7 @@ defineProps<{
       </div>
     </slot>
     <slot name="image-bottom">
-      <!-- TODO(fpion): bottom image -->
+      <!-- TODO(fpion): card-img-bottom -->
     </slot>
     <slot name="footer"></slot>
   </div>
