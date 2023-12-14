@@ -5,13 +5,37 @@ import type { ProgressVariant } from "@/types/components/TarProgress";
 
 const props = withDefaults(
   defineProps<{
+    /**
+     * The progress bar will be animated. The `striped` property must be set to `true` for the animation to function properly.
+     */
     animated?: boolean;
+    /**
+     * The accessibility label describing the progress bar.
+     */
     ariaLabel?: string;
+    /**
+     * The text displayed inside the progress bar.
+     */
     label?: string;
+    /**
+     * The maximum value of the progress bar.
+     */
     max?: number | string;
+    /**
+     * The minimum value of the progress bar.
+     */
     min?: number | string;
+    /**
+     * The progress bar will display with a striped style.
+     */
     striped?: boolean;
+    /**
+     * The current value of the progress bar, between `min` and `max`.
+     */
     value?: number | string;
+    /**
+     * The color variant of the progress bar.
+     */
     variant?: ProgressVariant;
   }>(),
   {
@@ -21,7 +45,7 @@ const props = withDefaults(
     striped: false,
     value: 0,
   },
-); // TODO(fpion): document
+);
 
 const classes = computed<string[]>(() => {
   const classes = ["progress-bar"];

@@ -21,9 +21,9 @@ const meta = {
   args: {
     describedBy: "",
     disabled: false,
+    floating: false,
     id: "first-name",
-    inline: false,
-    label: "First name",
+    label: "First Name",
     max: 100,
     min: 1,
     modelValue: "",
@@ -43,6 +43,13 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {};
+
+export const Floating: Story = {
+  args: {
+    floating: true,
+    id: "floating",
+  },
+};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Inputs",
@@ -90,18 +97,6 @@ export const Disabled: Story = {
   },
 };
 
-export const InlineInputs: Story = {
-  render: () => ({
-    components: { TarInput },
-    template: `
-      <div class="row">
-        <TarInput class="col" inline placeholder="First Name" />
-        <TarInput class="col" inline placeholder="Last Name" />
-      </div>
-    `,
-  }),
-};
-
 export const ReadonlyVsReadonlyPlaintextInputs: Story = {
   name: "Readonly vs. Readonly Plaintext Inputs",
   render: () => ({
@@ -119,9 +114,9 @@ export const DifferentSizes: Story = {
   render: () => ({
     components: { TarInput },
     template: `
-      <TarInput inline placeholder="Small Input" size="small" />
-      <TarInput inline placeholder="Medium Input" size="medium" />
-      <TarInput inline placeholder="Large Input" size="large" />
+      <TarInput placeholder="Small Input" size="small" />
+      <TarInput placeholder="Medium Input" size="medium" />
+      <TarInput placeholder="Large Input" size="large" />
     `,
   }),
 };

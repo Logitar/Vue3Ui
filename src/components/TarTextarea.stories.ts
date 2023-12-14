@@ -13,8 +13,8 @@ const meta = {
     cols: 20,
     describedBy: "",
     disabled: false,
+    floating: false,
     id: "description",
-    inline: false,
     label: "Description",
     max: 1000,
     min: 0,
@@ -33,6 +33,13 @@ export default meta;
 type Story = StoryObj<typeof TarTextarea>;
 
 export const Primary: Story = {};
+
+export const Floating: Story = {
+  args: {
+    floating: true,
+    id: "floating",
+  },
+};
 
 export const RequiredVsOptional: Story = {
   name: "Required vs. Optional Textarea",
@@ -78,10 +85,6 @@ export const Disabled: Story = {
   },
 };
 
-export const InlineTextarea: Story = {
-  args: { inline: true },
-};
-
 export const ReadonlyVsReadonlyPlaintextInputs: Story = {
   name: "Readonly vs. Readonly Plaintext Inputs",
   render: (args) => ({
@@ -102,9 +105,9 @@ export const DifferentSizes: Story = {
   render: () => ({
     components: { TarTextarea },
     template: `
-      <TarTextarea inline placeholder="Small Textarea" size="small" />
-      <TarTextarea inline placeholder="Medium Textarea" size="medium" />
-      <TarTextarea inline placeholder="Large Textarea" size="large" />
+      <TarTextarea placeholder="Small Textarea" size="small" />
+      <TarTextarea placeholder="Medium Textarea" size="medium" />
+      <TarTextarea placeholder="Large Textarea" size="large" />
     `,
   }),
 };
