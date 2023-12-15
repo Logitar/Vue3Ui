@@ -32,6 +32,17 @@ type Story = StoryObj<typeof TarToast>;
 
 export const Primary: Story = {};
 
+export const AutohidingAfter5Seconds: Story = {
+  args: { duration: 5000 },
+  render: (args) => ({
+    components: { TarToast },
+    setup() {
+      return { args };
+    },
+    template: `<TarToast v-bind="args" id="autohiding">Goodbye World!</TarToast>`,
+  }),
+};
+
 export const FadingVsNotFading: Story = {
   name: "Fading vs. Not Fading",
   render: (args) => ({

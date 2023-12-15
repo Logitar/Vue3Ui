@@ -75,9 +75,15 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {};
 
 export const AlwaysOpen: Story = {
-  args: { alwaysOpen: true },
+  args: {
+    alwaysOpen: true,
+    id: "always-open",
+  },
 };
 
 export const Flush: Story = {
-  args: { flush: true },
+  args: {
+    flush: true,
+    id: "flush",
+  },
 };
