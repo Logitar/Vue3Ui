@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onUpdated } from "vue";
+import { computed, onMounted, watch } from "vue";
 import { nanoid } from "nanoid";
 
 import type { ToastVariant } from "@/types/components/TarToast";
@@ -78,7 +78,8 @@ function initialize(): void {
   }
 }
 onMounted(initialize);
-onUpdated(initialize);
+watch(() => props.duration, initialize);
+watch(() => props.fade, initialize);
 </script>
 
 <template>
