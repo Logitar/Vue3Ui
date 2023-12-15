@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 
 import TarBadge from "./TarBadge.vue";
+import TarImage from "./TarImage.vue";
 import type { BadgeVariant } from "@/types/components/TarBadge";
 import { parseNumber } from "@/helpers/numberUtils";
 
@@ -58,7 +59,7 @@ const style = computed(() => {
 
 <template>
   <span>
-    <img v-if="src" class="rounded-circle" :src="src" :alt="alt" :height="height" />
+    <TarImage v-if="src" circle :alt="alt" :height="height" :src="src" />
     <TarBadge v-else-if="icon" class="rounded-circle" :style="style" :variant="variant">
       <FontAwesomeIcon :icon="icon" />
     </TarBadge>
