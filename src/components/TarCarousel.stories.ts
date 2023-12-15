@@ -29,13 +29,22 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {};
 
 export const FadingCarousel: Story = {
-  args: { fade: true },
+  args: {
+    fade: true,
+    id: "fading",
+  },
 };
 
 export const AutoplayingCarousel: Story = {
-  args: { autoplay: true },
+  args: {
+    autoplay: true,
+    id: "autoplaying",
+  },
 };
 
 export const NoTouchSupport: Story = {
-  args: { touch: false },
+  args: {
+    touch: false,
+    id: "no-touch",
+  },
 };

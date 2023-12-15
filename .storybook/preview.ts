@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/vue3";
 
+import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const preview: Preview = {
