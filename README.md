@@ -16,3 +16,67 @@ If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has a
    1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
    2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
 2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+## Project Setup
+
+```sh
+yarn
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+yarn dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+yarn build
+```
+
+### Preview the Last Build from dist
+
+```sh
+yarn preview
+```
+
+### Run Unit Tests and Code Coverage with [Vitest](https://vitest.dev/)
+
+```sh
+yarn test
+```
+
+### Run Unit Tests with Vitest
+
+```sh
+yarn test:dev
+```
+
+### Build the Application Without Type Checking
+
+```sh
+yarn build-only
+```
+
+### Type Check the Application Code Without Building
+
+```sh
+yarn type-check
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+yarn lint
+```
+
+### Format with [Prettier](https://prettier.io/)
+
+```sh
+yarn format
+```
