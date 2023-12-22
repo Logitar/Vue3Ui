@@ -1,7 +1,16 @@
 <script setup lang="ts">
-import { RouterView } from "vue-router";
+import { ref } from "vue";
+
+import TarCheckbox from "@/components/TarCheckbox.vue";
+
+const remember = ref<boolean>(false);
 </script>
 
 <template>
-  <RouterView />
+  <main class="container">
+    <h1>Home</h1>
+    <p>Remember Me: {{ remember }}</p>
+    <TarCheckbox label="Remember Me" switch v-model="remember" />
+    <TarCheckbox disabled label="Disabled Checkbox" />
+  </main>
 </template>
