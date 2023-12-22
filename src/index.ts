@@ -1,6 +1,5 @@
+import * as parsingUtils from "./helpers/parsingUtils";
 import TarCheckbox from "./components/TarCheckbox.vue";
-import type { CheckboxOptions } from "./types/TarCheckbox";
 
-export * as parsingUtils from "./helpers/parsingUtils";
-export type { CheckboxOptions };
-export { TarCheckbox };
+export * from "./types/TarCheckbox";
+export { TarCheckbox, parsingUtils };
