@@ -14,7 +14,9 @@
     "functions",
     "component",
     "library",
-    "checkbox"
+    "button",
+    "checkbox",
+    "spinner"
   ],
   "homepage": "https://www.francispion.ca/",
   "bugs": {
