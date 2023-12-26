@@ -7,4 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-Nothing yet.
+### Added
+
+- Created and configured the helper functions & component library project.
+- Implemented a Checkbox component.
+- Implemented a Spinner compoment.
