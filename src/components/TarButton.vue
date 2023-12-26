@@ -32,7 +32,7 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 
-defineEmits<{
+const emit = defineEmits<{
   /**
    * The button has been clicked.
    */
@@ -41,7 +41,7 @@ defineEmits<{
 </script>
 
 <template>
-  <button :class="classes" :disabled="parseBoolean(disabled)" :name="name" :type="type" :value="value">
+  <button :class="classes" :disabled="parseBoolean(disabled)" :name="name" :type="type" :value="value" @click="emit('click')">
     <slot v-if="parseBoolean(loading)" name="spinner">
       <TarSpinner inline small />
       <span class="visually-hidden" role="status">{{ status }}</span>
