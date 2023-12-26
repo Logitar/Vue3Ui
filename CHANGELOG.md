@@ -12,4 +12,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Created and configured the helper functions & component library project.
 - Implemented a Button component.
 - Implemented a Checkbox component.
-- Implemented a Spinner compoment.
+- Implemented a Spinner component.
+- Implemented an Alert component.
