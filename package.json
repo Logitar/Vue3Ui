@@ -1,6 +1,6 @@
 {
   "name": "logitar-vue3-ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Helper functions & Bootstrap5 component library for Vue3 distributed by Logitar.",
   "keywords": [
     "logitar",
@@ -14,7 +14,9 @@
     "functions",
     "component",
     "library",
-    "checkbox"
+    "button",
+    "checkbox",
+    "spinner"
   ],
   "homepage": "https://www.francispion.ca/",
   "bugs": {
