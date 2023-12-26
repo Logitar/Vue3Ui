@@ -23,7 +23,7 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 const inputId = computed<string>(() => props.id ?? nanoid());
-const role = computed<string | undefined>(() => (props.switch ? "switch" : undefined));
+const inputRole = computed<string | undefined>(() => props.role ?? (props.switch ? "switch" : undefined));
 
 const emit = defineEmits<{
   (e: "update:model-value", value: boolean): void;
@@ -50,7 +50,7 @@ defineExpose({ focus });
         :name="name"
         ref="inputRef"
         :required="parseBoolean(required)"
-        :role="role"
+        :role="inputRole"
         type="checkbox"
         :value="value"
         @change="onChange"
