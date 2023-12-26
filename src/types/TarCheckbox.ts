@@ -1,3 +1,6 @@
+/**
+ * The options of the TarCheckbox component.
+ */
 export type CheckboxOptions = {
   /**
    * The accessibility label describing the checkbox.
