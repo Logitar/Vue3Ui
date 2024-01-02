@@ -1,4 +1,5 @@
 import * as parsingUtils from "./helpers/parsingUtils";
+import * as tooltipUtils from "./helpers/tooltipUtils";
 import TarAccordion from "./components/TarAccordion.vue";
 import TarAccordionItem from "./components/TarAccordionItem.vue";
 import TarAlert from "./components/TarAlert.vue";
@@ -60,4 +61,5 @@ export {
   TarTabs,
   TarTextarea,
   parsingUtils,
+  tooltipUtils,
 };

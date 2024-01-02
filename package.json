@@ -32,7 +32,8 @@
     "spinner",
     "tab",
     "tabs",
-    "textarea"
+    "textarea",
+    "tooltip"
   ],
   "homepage": "https://www.francispion.ca/",
   "bugs": {
