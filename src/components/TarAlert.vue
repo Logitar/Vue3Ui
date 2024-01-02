@@ -10,7 +10,7 @@ const props = withDefaults(defineProps<AlertOptions>(), {
 });
 
 const isDismissible = computed<boolean>(() => parseBoolean(props.dismissible) ?? false);
-const isShown = computed<boolean>(() => parseBoolean(props.show) || parseBoolean(props.modelValue) || false);
+const isShown = computed<boolean>(() => (parseBoolean(props.show) || parseBoolean(props.modelValue)) ?? false);
 const classes = computed<string[]>(() => {
   const classes = ["alert"];
   if (props.variant) {

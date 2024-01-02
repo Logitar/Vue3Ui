@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented a Spinner component.
 - Implemented a Tab component.
 - Implemented a Textarea component.
+- Implemented a Toast component.
 - Implemented an Accordion component.
 - Implemented an Alert component.
 - Implemented an Avatar component.
