@@ -20,6 +20,8 @@ import TarSpinner from "./components/TarSpinner.vue";
 import TarTab from "./components/TarTab.vue";
 import TarTabs from "./components/TarTabs.vue";
 import TarTextarea from "./components/TarTextarea.vue";
+import TarToast from "./components/TarToast.vue";
+import TarToaster from "./components/TarToaster.vue";
 
 export * from "./types/TarAccordion";
 export * from "./types/TarAlert";
@@ -39,6 +41,7 @@ export * from "./types/TarSelect";
 export * from "./types/TarSpinner";
 export * from "./types/TarTabs";
 export * from "./types/TarTextarea";
+export * from "./types/TarToasts";
 export {
   TarAccordion,
   TarAccordionItem,
@@ -60,6 +63,8 @@ export {
   TarTab,
   TarTabs,
   TarTextarea,
+  TarToast,
+  TarToaster,
   parsingUtils,
   tooltipUtils,
 };
