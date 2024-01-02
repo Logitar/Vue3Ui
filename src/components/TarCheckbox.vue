@@ -26,12 +26,18 @@ const inputId = computed<string>(() => props.id ?? nanoid());
 const inputRole = computed<string | undefined>(() => props.role ?? (props.switch ? "switch" : undefined));
 
 const emit = defineEmits<{
+  /**
+   * The checkbox has been checked or unchecked.
+   */
   (e: "update:model-value", value: boolean): void;
 }>();
 function onChange(event: Event): void {
   emit("update:model-value", (event.target as HTMLInputElement).checked);
 }
 
+/**
+ * Focuses the checkbox element.
+ */
 function focus(): void {
   inputRef.value?.focus();
 }
