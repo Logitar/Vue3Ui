@@ -29,6 +29,9 @@ const height = computed<string | undefined>(() => {
   return rows ? `${rows * 1.5}rem` : undefined;
 });
 
+/**
+ * Focuses the textarea element.
+ */
 function focus(): void {
   textareaRef.value?.focus();
 }
