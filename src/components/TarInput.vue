@@ -92,6 +92,9 @@ const inputStep = computed<number | string | undefined>(() => {
   return undefined;
 });
 
+/**
+ * Focuses the input element.
+ */
 function focus(): void {
   inputRef.value?.focus();
 }
