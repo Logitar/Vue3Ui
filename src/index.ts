@@ -3,6 +3,7 @@ import TarAlert from "./components/TarAlert.vue";
 import TarBadge from "./components/TarBadge.vue";
 import TarButton from "./components/TarButton.vue";
 import TarCard from "./components/TarCard.vue";
+import TarCarousel from "./components/TarCarousel.vue";
 import TarCheckbox from "./components/TarCheckbox.vue";
 import TarImage from "./components/TarImage.vue";
 import TarInput from "./components/TarInput.vue";
@@ -17,6 +18,7 @@ export * from "./types/TarAlert";
 export * from "./types/TarBadge";
 export * from "./types/TarButton";
 export * from "./types/TarCard";
+export * from "./types/TarCarousel";
 export * from "./types/TarCheckbox";
 export * from "./types/TarImage";
 export * from "./types/TarInput";
@@ -30,6 +32,7 @@ export {
   TarBadge,
   TarButton,
   TarCard,
+  TarCarousel,
   TarCheckbox,
   TarImage,
   TarInput,
