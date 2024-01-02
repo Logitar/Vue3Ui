@@ -2,6 +2,7 @@ import * as parsingUtils from "./helpers/parsingUtils";
 import TarAlert from "./components/TarAlert.vue";
 import TarAvatar from "./components/TarAvatar.vue";
 import TarBadge from "./components/TarBadge.vue";
+import TarBreadcrumb from "./components/TarBreadcrumb.vue";
 import TarButton from "./components/TarButton.vue";
 import TarCard from "./components/TarCard.vue";
 import TarCarousel from "./components/TarCarousel.vue";
@@ -18,6 +19,7 @@ import TarTextarea from "./components/TarTextarea.vue";
 export * from "./types/TarAlert";
 export * from "./types/TarAvatar";
 export * from "./types/TarBadge";
+export * from "./types/TarBreadcrumb";
 export * from "./types/TarButton";
 export * from "./types/TarCard";
 export * from "./types/TarCarousel";
@@ -33,6 +35,7 @@ export {
   TarAlert,
   TarAvatar,
   TarBadge,
+  TarBreadcrumb,
   TarButton,
   TarCard,
   TarCarousel,

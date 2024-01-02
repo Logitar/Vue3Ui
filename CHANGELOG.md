@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Created and configured the helper functions & component library project.
 - Implemented a Badge component.
+- Implemented a Breadcrumb component.
 - Implemented a Button component.
 - Implemented a Card component.
 - Implemented a Carousel component.
