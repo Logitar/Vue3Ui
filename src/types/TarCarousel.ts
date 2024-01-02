@@ -9,7 +9,7 @@ export type CarouselOptions = {
    */
   autoplay?: boolean | string;
   /**
-   * The carousel will be animated using a fade transition instead of a slide.
+   * The carousel will be animated using a fading transition instead of a slide.
    */
   fade?: boolean | string;
   /**

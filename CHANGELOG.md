@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented a Card component.
 - Implemented a Carousel component.
 - Implemented a Checkbox component.
+- Implemented a Modal component.
 - Implemented a Progress component.
 - Implemented a Select component.
 - Implemented a Spinner component.
