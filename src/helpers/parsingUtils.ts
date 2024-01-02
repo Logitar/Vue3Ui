@@ -1,3 +1,7 @@
+/**
+ * Tries parsing a boolean from the specified value.
+ * @param value Can be a boolean, a string or undefined. Strings are trimmed and lowercased before being compared to boolean equivalents.
+ */
 export function parseBoolean(value: boolean | string | undefined): boolean | undefined {
   if (typeof value === "boolean") {
     return value;
@@ -12,6 +16,10 @@ export function parseBoolean(value: boolean | string | undefined): boolean | und
   }
 }
 
+/**
+ * Tries parsing a number from the specified value.
+ * @param value Can be a number, a string or undefined. Strings are trimmed before being converted to numbers.
+ */
 export function parseNumber(value: number | string | undefined): number | undefined {
   if (typeof value === "number") {
     return value;
