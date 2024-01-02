@@ -4,13 +4,63 @@ import { computed, onMounted, ref } from "vue";
 import { nanoid } from "nanoid";
 
 import type { ModalOptions } from "@/types/TarModal";
+import { parseBoolean } from "@/helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ModalOptions>(), {
   close: "Close",
+  fade: true,
 });
 
 const modal = ref<Modal>();
 
+const classes = computed<string[]>(() => {
+  const classes = ["modal"];
+  if (parseBoolean(props.fade)) {
+    classes.push("fade");
+  }
+  return classes;
+});
+const dialogClasses = computed<string[]>(() => {
+  const classes = ["modal-dialog"];
+  if (parseBoolean(props.centered)) {
+    classes.push("modal-dialog-centered");
+  }
+  if (parseBoolean(props.scrollable)) {
+    classes.push("modal-dialog-scrollable");
+  }
+  switch (props.fullscreen) {
+    case true:
+      classes.push("modal-fullscreen");
+      break;
+    case "below-small":
+      classes.push("modal-fullscreen-sm-down");
+      break;
+    case "below-medium":
+      classes.push("modal-fullscreen-md-down");
+      break;
+    case "below-large":
+      classes.push("modal-fullscreen-lg-down");
+      break;
+    case "below-x-large":
+      classes.push("modal-fullscreen-xl-down");
+      break;
+    case "below-xx-large":
+      classes.push("modal-fullscreen-xxl-down");
+      break;
+  }
+  switch (props.size) {
+    case "small":
+      classes.push("modal-sm");
+      break;
+    case "large":
+      classes.push("modal-lg");
+      break;
+    case "x-large":
+      classes.push("modal-xl");
+      break;
+  }
+  return classes;
+});
 const modalId = computed<string>(() => props.id ?? nanoid());
 const labelId = computed<string>(() => `${modalId.value}-label`);
 
@@ -38,8 +88,16 @@ onMounted(() => (modal.value = new Modal(`#${modalId.value}`)));
 </script>
 
 <template>
-  <div class="modal fade" :id="modalId" tabindex="-1" :aria-labelledby="labelId" aria-hidden="true">
-    <div class="modal-dialog">
+  <div
+    :class="classes"
+    :id="modalId"
+    tabindex="-1"
+    :aria-labelledby="labelId"
+    aria-hidden="true"
+    :data-bs-backdrop="parseBoolean(static) ? 'static' : undefined"
+    :data-bs-keyboard="parseBoolean(static) ? false : undefined"
+  >
+    <div :class="dialogClasses">
       <div class="modal-content">
         <div class="modal-header">
           <h1 v-if="title" class="modal-title fs-5" :id="labelId">{{ title }}</h1>
