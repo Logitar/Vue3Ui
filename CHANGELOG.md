@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Created and configured the helper functions & component library project.
+- Implemented a Badge component.
 - Implemented a Button component.
 - Implemented a Checkbox component.
 - Implemented a Spinner component.
