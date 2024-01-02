@@ -9,13 +9,14 @@ const props = withDefaults(defineProps<AlertOptions>(), {
   variant: "primary",
 });
 
+const isDismissible = computed<boolean>(() => parseBoolean(props.dismissible) ?? false);
 const isShown = computed<boolean>(() => parseBoolean(props.show) || parseBoolean(props.modelValue) || false);
 const classes = computed<string[]>(() => {
   const classes = ["alert"];
   if (props.variant) {
     classes.push(`alert-${props.variant}`);
   }
-  if (parseBoolean(props.dismissible)) {
+  if (isDismissible.value) {
     classes.push("alert-dismissible");
   }
   if (isShown.value) {
@@ -35,7 +36,7 @@ defineEmits<{
 <template>
   <div :class="classes" role="alert" v-show="isShown">
     <slot></slot>
-    <slot v-if="parseBoolean(dismissible)" name="close-button">
+    <slot v-if="isDismissible" name="close-button">
       <button type="button" class="btn-close" :aria-label="close" @click="$emit('update:model-value', false)"></button>
     </slot>
   </div>

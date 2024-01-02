@@ -10,6 +10,11 @@ const props = withDefaults(defineProps<SelectOptions>(), {
 
 const selectRef = ref<HTMLSelectElement>();
 
+const isDisabled = computed<boolean>(() => parseBoolean(props.disabled) ?? false);
+const isFloating = computed<boolean>(() => parseBoolean(props.floating) ?? false);
+const isMultiple = computed<boolean>(() => parseBoolean(props.multiple) ?? false);
+const isRequired = computed<boolean>(() => parseBoolean(props.required) ?? false);
+
 const classes = computed<string[]>(() => {
   const classes = ["form-select"];
   switch (props.size) {
@@ -41,10 +46,10 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot v-if="!floating" name="label-override">
+    <slot v-if="!isFloating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
-        <slot name="label-required" v-if="parseBoolean(required)">
+        <slot name="label-required" v-if="isRequired">
           <span class="text-danger">*</span>
         </slot>
       </label>
@@ -52,23 +57,23 @@ defineEmits<{
     <slot name="before"></slot>
     <div class="input-group">
       <slot name="prepend"></slot>
-      <div v-if="floating" class="form-floating">
+      <div v-if="isFloating" class="form-floating">
         <slot>
           <select
             :aria-describedby="describedBy"
             :aria-label="ariaLabel"
             :class="classes"
-            :disabled="parseBoolean(disabled)"
+            :disabled="isDisabled"
             :id="id"
-            :multiple="parseBoolean(multiple)"
+            :multiple="isMultiple"
             :name="name"
             ref="selectRef"
-            :required="parseBoolean(required)"
+            :required="isRequired"
             :value="modelValue"
             @input="$emit('update:model-value', ($event.target as HTMLInputElement).value)"
           >
             <slot name="placeholder-override">
-              <option v-if="placeholder" :disabled="parseBoolean(required) && options.length > 0" value="">{{ placeholder }}</option>
+              <option v-if="placeholder" :disabled="isRequired && options.length > 0" value="">{{ placeholder }}</option>
             </slot>
             <option v-for="(option, index) in options" :key="index" :disabled="option.disabled" :label="option.label" :value="option.value">
               {{ option.text }}
@@ -78,7 +83,7 @@ defineEmits<{
         <slot name="label-override">
           <label :for="id">
             {{ label }}
-            <slot name="label-required" v-if="parseBoolean(required)">
+            <slot name="label-required" v-if="isRequired">
               <span class="text-danger">*</span>
             </slot>
           </label>
@@ -89,17 +94,17 @@ defineEmits<{
           :aria-describedby="describedBy"
           :aria-label="ariaLabel"
           :class="classes"
-          :disabled="parseBoolean(disabled)"
+          :disabled="isDisabled"
           :id="id"
-          :multiple="parseBoolean(multiple)"
+          :multiple="isMultiple"
           :name="name"
           ref="selectRef"
-          :required="parseBoolean(required)"
+          :required="isRequired"
           :value="modelValue"
           @input="$emit('update:model-value', ($event.target as HTMLInputElement).value)"
         >
           <slot name="placeholder-override">
-            <option v-if="placeholder" :disabled="parseBoolean(required) && options.length > 0" value="">{{ placeholder }}</option>
+            <option v-if="placeholder" :disabled="isRequired && options.length > 0" value="">{{ placeholder }}</option>
           </slot>
           <option v-for="(option, index) in options" :key="index" :disabled="option.disabled" :label="option.label" :value="option.value">
             {{ option.text }}

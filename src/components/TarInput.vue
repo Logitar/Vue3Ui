@@ -8,11 +8,16 @@ const props = defineProps<InputOptions>();
 
 const inputRef = ref<HTMLInputElement>();
 
+const isDisabled = computed<boolean>(() => parseBoolean(props.disabled) ?? false);
+const isFloating = computed<boolean>(() => parseBoolean(props.floating) ?? false);
+const isReadonly = computed<boolean>(() => parseBoolean(props.readonly) ?? false);
+const isRequired = computed<boolean>(() => parseBoolean(props.required) ?? false);
+
 const classes = computed<string[]>(() => {
   const classes: string[] = [];
   if (props.type === "range") {
     classes.push("form-range");
-  } else if (parseBoolean(props.readonly) && parseBoolean(props.plaintext)) {
+  } else if (isReadonly.value && parseBoolean(props.plaintext)) {
     classes.push("form-control-plaintext");
   } else {
     classes.push("form-control");
@@ -110,10 +115,10 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot v-if="!parseBoolean(floating)" name="label-override">
+    <slot v-if="!isFloating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
-        <slot name="label-required" v-if="parseBoolean(required)">
+        <slot name="label-required" v-if="isRequired">
           <span class="text-danger">*</span>
         </slot>
       </label>
@@ -121,12 +126,12 @@ defineEmits<{
     <slot name="before"></slot>
     <div class="input-group">
       <slot name="prepend"></slot>
-      <div v-if="parseBoolean(floating)" class="form-floating">
+      <div v-if="isFloating" class="form-floating">
         <slot>
           <input
             :aria-describedby="describedBy"
             :class="classes"
-            :disabled="parseBoolean(disabled)"
+            :disabled="isDisabled"
             :id="id"
             :maxlength="maxLength"
             :max="maxValue"
@@ -135,9 +140,9 @@ defineEmits<{
             :name="name"
             :pattern="pattern"
             :placeholder="placeholder"
-            :readonly="parseBoolean(readonly)"
+            :readonly="isReadonly"
             ref="inputRef"
-            :required="parseBoolean(required)"
+            :required="isRequired"
             :step="inputStep"
             :type="type"
             :value="modelValue"
@@ -147,7 +152,7 @@ defineEmits<{
         <slot name="label-override">
           <label :for="id">
             {{ label }}
-            <slot name="label-required" v-if="parseBoolean(required)">
+            <slot name="label-required" v-if="isRequired">
               <span class="text-danger">*</span>
             </slot>
           </label>
@@ -157,7 +162,7 @@ defineEmits<{
         <input
           :aria-describedby="describedBy"
           :class="classes"
-          :disabled="parseBoolean(disabled)"
+          :disabled="isDisabled"
           :id="id"
           :maxlength="maxLength"
           :max="maxValue"
@@ -166,9 +171,9 @@ defineEmits<{
           :name="name"
           :pattern="pattern"
           :placeholder="placeholder"
-          :readonly="parseBoolean(readonly)"
+          :readonly="isReadonly"
           ref="inputRef"
-          :required="parseBoolean(required)"
+          :required="isRequired"
           :step="inputStep"
           :type="type"
           :value="modelValue"

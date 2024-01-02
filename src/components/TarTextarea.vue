@@ -7,9 +7,14 @@ import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
 const props = defineProps<TextareaOptions>();
 const textareaRef = ref<HTMLTextAreaElement>();
 
+const isDisabled = computed<boolean>(() => parseBoolean(props.disabled) ?? false);
+const isFloating = computed<boolean>(() => parseBoolean(props.floating) ?? false);
+const isReadonly = computed<boolean>(() => parseBoolean(props.readonly) ?? false);
+const isRequired = computed<boolean>(() => parseBoolean(props.required) ?? false);
+
 const classes = computed<string[]>(() => {
   const classes: string[] = [];
-  if (parseBoolean(props.readonly) && parseBoolean(props.plaintext)) {
+  if (isReadonly.value && parseBoolean(props.plaintext)) {
     classes.push("form-control-plaintext");
   } else {
     classes.push("form-control");
@@ -47,30 +52,30 @@ defineEmits<{
 
 <template>
   <div class="mb-3">
-    <slot v-if="!parseBoolean(floating)" name="label-override">
+    <slot v-if="!isFloating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
-        <slot name="label-required" v-if="parseBoolean(required)">
+        <slot name="label-required" v-if="isRequired">
           <span class="text-danger">*</span>
         </slot>
       </label>
     </slot>
     <slot name="before"></slot>
-    <div v-if="parseBoolean(floating)" class="form-floating">
+    <div v-if="isFloating" class="form-floating">
       <slot>
         <textarea
           :aria-describedby="describedBy"
           :class="classes"
           :cols="parseNumber(cols)"
-          :disabled="parseBoolean(disabled)"
+          :disabled="isDisabled"
           :id="id"
           :maxlength="parseNumber(props.max) || undefined"
           :minlength="parseNumber(props.min) || undefined"
           :name="name"
           :placeholder="placeholder"
-          :readonly="parseBoolean(readonly)"
+          :readonly="isReadonly"
           ref="textareaRef"
-          :required="parseBoolean(required)"
+          :required="isRequired"
           :style="{ height }"
           :value="modelValue"
           @input="$emit('update:model-value', ($event.target as HTMLTextAreaElement).value)"
@@ -80,7 +85,7 @@ defineEmits<{
       <slot name="label-override">
         <label :for="id">
           {{ label }}
-          <slot name="label-required" v-if="parseBoolean(required)">
+          <slot name="label-required" v-if="isRequired">
             <span class="text-danger">*</span>
           </slot>
         </label>
@@ -91,15 +96,15 @@ defineEmits<{
         :aria-describedby="describedBy"
         :class="classes"
         :cols="parseNumber(cols)"
-        :disabled="parseBoolean(disabled)"
+        :disabled="isDisabled"
         :id="id"
         :maxlength="parseNumber(props.max) || undefined"
         :minlength="parseNumber(props.min) || undefined"
         :name="name"
         :placeholder="placeholder"
-        :readonly="parseBoolean(readonly)"
+        :readonly="isReadonly"
         ref="textareaRef"
-        :required="parseBoolean(required)"
+        :required="isRequired"
         :rows="parseNumber(rows)"
         :value="modelValue"
         @input="$emit('update:model-value', ($event.target as HTMLTextAreaElement).value)"
