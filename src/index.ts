@@ -1,4 +1,6 @@
 import * as parsingUtils from "./helpers/parsingUtils";
+import TarAccordion from "./components/TarAccordion.vue";
+import TarAccordionItem from "./components/TarAccordionItem.vue";
 import TarAlert from "./components/TarAlert.vue";
 import TarAvatar from "./components/TarAvatar.vue";
 import TarBadge from "./components/TarBadge.vue";
@@ -18,6 +20,7 @@ import TarTab from "./components/TarTab.vue";
 import TarTabs from "./components/TarTabs.vue";
 import TarTextarea from "./components/TarTextarea.vue";
 
+export * from "./types/TarAccordion";
 export * from "./types/TarAlert";
 export * from "./types/TarAvatar";
 export * from "./types/TarBadge";
@@ -36,6 +39,8 @@ export * from "./types/TarSpinner";
 export * from "./types/TarTabs";
 export * from "./types/TarTextarea";
 export {
+  TarAccordion,
+  TarAccordionItem,
   TarAlert,
   TarAvatar,
   TarBadge,
