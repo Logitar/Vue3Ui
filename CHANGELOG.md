@@ -13,4 +13,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented a Button component.
 - Implemented a Checkbox component.
 - Implemented a Spinner component.
+- Implemented a Tab component.
 - Implemented an Alert component.
