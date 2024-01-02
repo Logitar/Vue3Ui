@@ -8,8 +8,14 @@ const meta = {
   component: TarModal,
   tags: ["autodocs"],
   args: {
+    centered: false,
     close: "Close",
+    fade: true,
+    fullscreen: false,
     id: "modal",
+    scrollable: false,
+    size: "medium",
+    static: false,
     title: "Modal title",
   },
   render: (args) => ({

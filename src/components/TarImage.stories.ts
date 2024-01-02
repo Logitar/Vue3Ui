@@ -7,7 +7,7 @@ const meta = {
   component: TarImage,
   tags: ["autodocs"],
   args: {
-    alt: "Francis Pion's picture",
+    alt: "A beautiful castle scenery.",
     circle: false,
     fluid: false,
     height: 509,
