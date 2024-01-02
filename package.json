@@ -22,7 +22,8 @@
     "input",
     "spinner",
     "tab",
-    "tabs"
+    "tabs",
+    "textarea"
   ],
   "homepage": "https://www.francispion.ca/",
   "bugs": {

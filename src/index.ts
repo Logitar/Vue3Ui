@@ -8,6 +8,7 @@ import TarInput from "./components/TarInput.vue";
 import TarSpinner from "./components/TarSpinner.vue";
 import TarTab from "./components/TarTab.vue";
 import TarTabs from "./components/TarTabs.vue";
+import TarTextarea from "./components/TarTextarea.vue";
 
 export * from "./types/TarAlert";
 export * from "./types/TarBadge";
@@ -17,4 +18,5 @@ export * from "./types/TarImage";
 export * from "./types/TarInput";
 export * from "./types/TarSpinner";
 export * from "./types/TarTabs";
-export { TarAlert, TarBadge, TarButton, TarCheckbox, TarImage, TarInput, TarSpinner, TarTab, TarTabs, parsingUtils };
+export * from "./types/TarTextarea";
+export { TarAlert, TarBadge, TarButton, TarCheckbox, TarImage, TarInput, TarSpinner, TarTab, TarTabs, TarTextarea, parsingUtils };
