@@ -1,5 +1,6 @@
 import * as parsingUtils from "./helpers/parsingUtils";
 import TarAlert from "./components/TarAlert.vue";
+import TarAvatar from "./components/TarAvatar.vue";
 import TarBadge from "./components/TarBadge.vue";
 import TarButton from "./components/TarButton.vue";
 import TarCard from "./components/TarCard.vue";
@@ -15,6 +16,7 @@ import TarTabs from "./components/TarTabs.vue";
 import TarTextarea from "./components/TarTextarea.vue";
 
 export * from "./types/TarAlert";
+export * from "./types/TarAvatar";
 export * from "./types/TarBadge";
 export * from "./types/TarButton";
 export * from "./types/TarCard";
@@ -29,6 +31,7 @@ export * from "./types/TarTabs";
 export * from "./types/TarTextarea";
 export {
   TarAlert,
+  TarAvatar,
   TarBadge,
   TarButton,
   TarCard,

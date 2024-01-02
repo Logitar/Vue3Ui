@@ -21,5 +21,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented a Tab component.
 - Implemented a Textarea component.
 - Implemented an Alert component.
+- Implemented an Avatar component.
 - Implemented an Image component.
 - Implemented an Input component.
