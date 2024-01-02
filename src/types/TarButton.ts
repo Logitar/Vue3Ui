@@ -4,7 +4,7 @@
 export type ButtonSize = "small" | "medium" | "large";
 
 /**
- * The options of the TarSpinner component.
+ * The options of the TarButton component.
  */
 export type ButtonOptions = {
   /**
