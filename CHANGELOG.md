@@ -9,7 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
-## [1.0.0] - 2023-01-02
+## [2.0.0] - 2024-01-02
+
+### Changed
+
+- Implemented a Toast store.
+
+## [1.0.0] - 2024-01-02
 
 ### Added
 
@@ -34,5 +40,6 @@ Nothing yet.
 - Implemented an Image component.
 - Implemented an Input component.
 
-[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/Logitar/Vue3Ui/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/Logitar/Vue3Ui/releases/tag/v1.0.0
