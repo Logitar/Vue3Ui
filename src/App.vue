@@ -4,7 +4,7 @@ import { ref } from "vue";
 import TarButton from "@/components/TarButton.vue";
 import TarToaster from "./components/TarToaster.vue";
 
-const toaster = ref();
+const toaster = ref<InstanceType<typeof TarToaster>>();
 
 function onClick(): void {
   if (toaster.value) {
