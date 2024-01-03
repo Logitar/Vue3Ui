@@ -6,8 +6,8 @@ import type { ToastOptions } from "@/types/TarToasts";
 export const useToastStore = defineStore("toast", () => {
   const toasts = ref<ToastOptions[]>([]);
 
-  function add(options: ToastOptions): void {
-    toasts.value.push(options);
+  function add(toast: ToastOptions): void {
+    toasts.value.push(toast);
   }
   function remove(toast: ToastOptions): void {
     const index = toasts.value.findIndex(({ id }) => id === toast.id);

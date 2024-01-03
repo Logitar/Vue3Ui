@@ -5,7 +5,7 @@ import { createPinia } from "pinia";
 
 import "./fontAwesome";
 import App from "./App.vue";
-import { useToastStore } from ".";
+import { useToastStore } from "./stores/toast";
 
 const app = createApp(App);
 

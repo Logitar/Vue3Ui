@@ -8814,7 +8814,6 @@ __metadata:
     vue-router: "npm:^4.2.5"
     vue-tsc: "npm:^1.8.25"
   peerDependencies:
-    pinia: "*"
     vue: ^3.3.11
   languageName: unknown
   linkType: soft

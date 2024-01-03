@@ -1,6 +1,6 @@
 {
   "name": "logitar-vue3-ui",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Helper functions & Bootstrap5 component library for Vue3 distributed by Logitar.",
   "keywords": [
     "logitar",
@@ -132,7 +132,6 @@
     "vue-tsc": "^1.8.25"
   },
   "peerDependencies": {
-    "pinia": "*",
     "vue": "^3.3.11"
   }
 }
