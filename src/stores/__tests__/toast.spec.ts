@@ -23,7 +23,7 @@ describe("toastStore", () => {
 
     toasts.add(toast);
     expect(toasts.toasts.length).toBe(1);
-    expect(toasts.toasts.at(0).id).toBe(toast.id);
+    expect(toasts.toasts.at(0)?.id).toBe(toast.id);
   });
 
   it.concurrent("should remove a toast from the list", () => {
@@ -31,9 +31,9 @@ describe("toastStore", () => {
     expect(toasts.toasts.length).toBe(0);
 
     toasts.add(toast);
-    expect(toasts.toasts.at(0).id).toBe(toast.id);
+    expect(toasts.toasts.at(0)?.id).toBe(toast.id);
 
-    toasts.remove(toast.id);
+    toasts.remove(toast);
     expect(toasts.toasts.length).toBe(0);
   });
 });

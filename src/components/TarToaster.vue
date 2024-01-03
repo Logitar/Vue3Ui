@@ -1,17 +1,18 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed } from "vue";
 import { nanoid } from "nanoid";
 
 import TarToast from "./TarToast.vue";
 import type { ToastContainerOptions, ToastOptions } from "@/types/TarToasts";
+import { useToastStore } from "@/stores/toast";
+
+const toasts = useToastStore();
 
 const props = withDefaults(defineProps<ToastContainerOptions>(), {
   horizontalAlignment: "right",
   id: "toasts",
   verticalAlignment: "top",
 });
-
-const toasts = ref<Map<string, ToastOptions>>(new Map<string, ToastOptions>());
 
 const classes = computed<string[]>(() => {
   const classes = ["toast-container", "position-fixed", "p-3"];
@@ -46,13 +47,13 @@ const classes = computed<string[]>(() => {
  */
 function toast(toast: ToastOptions): void {
   toast.id ??= `${props.id}-toast-${nanoid()}`;
-  toasts.value.set(toast.id, toast);
+  toasts.add(toast);
 }
 defineExpose({ toast });
 </script>
 
 <template>
   <div :class="classes">
-    <TarToast v-for="[key, toast] in toasts" :key="key" :id="key" v-bind="toast" @hidden="toasts.delete(key)" />
+    <TarToast v-for="toast in toasts.toasts" :key="toast.id" v-bind="toast" @hidden="toasts.remove(toast)" />
   </div>
 </template>
