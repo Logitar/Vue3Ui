@@ -17,10 +17,6 @@ export type ToastContainerOptions = {
    */
   horizontalAlignment?: HorizontalAlignment;
   /**
-   * The unique identifier of the container.
-   */
-  id?: string;
-  /**
    * The Toasts to display inside the container.
    */
   toasts?: ToastOptions[];

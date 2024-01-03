@@ -6,7 +6,6 @@ import type { ToastContainerOptions, ToastOptions } from "@/types/TarToasts";
 
 const props = withDefaults(defineProps<ToastContainerOptions>(), {
   horizontalAlignment: "right",
-  id: "toasts",
   verticalAlignment: "top",
 });
 
