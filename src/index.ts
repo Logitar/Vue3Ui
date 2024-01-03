@@ -22,6 +22,7 @@ import TarTabs from "./components/TarTabs.vue";
 import TarTextarea from "./components/TarTextarea.vue";
 import TarToast from "./components/TarToast.vue";
 import TarToaster from "./components/TarToaster.vue";
+import { useToastStore } from "./stores/toast";
 
 export * from "./types/TarAccordion";
 export * from "./types/TarAlert";
@@ -67,4 +68,5 @@ export {
   TarToaster,
   parsingUtils,
   tooltipUtils,
+  useToastStore,
 };
