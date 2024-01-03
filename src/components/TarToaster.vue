@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { nanoid } from "nanoid";
 
 import TarToast from "./TarToast.vue";
 import type { ToastContainerOptions, ToastOptions } from "@/types/TarToasts";
-import { useToastStore } from "@/stores/toast";
-
-const toasts = useToastStore();
 
 const props = withDefaults(defineProps<ToastContainerOptions>(), {
   horizontalAlignment: "right",
@@ -41,19 +37,16 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 
-/**
- * Adds a toast to the toast container.
- * @param toast The toast to add.
- */
-function toast(toast: ToastOptions): void {
-  toast.id ??= `${props.id}-toast-${nanoid()}`;
-  toasts.add(toast);
-}
-defineExpose({ toast });
+defineEmits<{
+  /**
+   * The specified toast has been hidden.
+   */
+  (e: "hidden", toast: ToastOptions): void;
+}>();
 </script>
 
 <template>
   <div :class="classes">
-    <TarToast v-for="toast in toasts.toasts" :key="toast.id" v-bind="toast" @hidden="toasts.remove(toast)" />
+    <TarToast v-for="toast in toasts" :key="toast.id" v-bind="toast" @hidden="$emit('hidden', toast)" />
   </div>
 </template>

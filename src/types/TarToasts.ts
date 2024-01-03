@@ -21,6 +21,10 @@ export type ToastContainerOptions = {
    */
   id?: string;
   /**
+   * The Toasts to display inside the container.
+   */
+  toasts?: ToastOptions[];
+  /**
    * The vertical alignment of toasts in this container.
    */
   verticalAlignment?: VerticalAlignment;

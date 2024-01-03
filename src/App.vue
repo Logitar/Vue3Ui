@@ -3,23 +3,31 @@ import { ref } from "vue";
 
 import TarButton from "@/components/TarButton.vue";
 import TarToaster from "./components/TarToaster.vue";
+import type { ToastOptions } from "./types/TarToasts";
+import { nanoid } from "nanoid";
 
-const toaster = ref<InstanceType<typeof TarToaster>>();
+const toasts = ref<Map<string, ToastOptions>>(new Map<string, ToastOptions>());
 
 function onClick(): void {
-  if (toaster.value) {
-    toaster.value.toast({
-      duration: 15 * 1000,
-      fade: true,
-      text: "Hello World!",
-      title: "Message",
-      variant: "info",
-    });
-  }
+  const id = nanoid();
+  toasts.value.set(id, {
+    duration: 15 * 1000,
+    fade: true,
+    id,
+    text: "Hello World!",
+    title: "Message",
+    variant: "info",
+  });
 }
 
 function onError(): void {
   throw new Error("Oops! Something happened...");
+}
+
+function removeToast(toast: ToastOptions): void {
+  if (toast.id) {
+    toasts.value.delete(toast.id);
+  }
 }
 </script>
 
@@ -30,6 +38,6 @@ function onError(): void {
       <TarButton class="me-2" text="Message" @click="onClick" />
       <TarButton text="Error" variant="danger" @click="onError" />
     </div>
-    <TarToaster ref="toaster" />
+    <TarToaster :toasts="Array.from(toasts.values())" @hidden="removeToast" />
   </main>
 </template>
