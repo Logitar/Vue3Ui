@@ -1,19 +1,17 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { nanoid } from "nanoid";
 
 import TarButton from "@/components/TarButton.vue";
 import TarToaster from "./components/TarToaster.vue";
-import type { ToastOptions } from "./types/TarToasts";
-import { nanoid } from "nanoid";
+import { useToastStore } from "@/stores/toast";
 
-const toasts = ref<Map<string, ToastOptions>>(new Map<string, ToastOptions>());
+const store = useToastStore();
 
 function onClick(): void {
-  const id = nanoid();
-  toasts.value.set(id, {
+  store.add({
     duration: 15 * 1000,
     fade: true,
-    id,
+    id: nanoid(),
     text: "Hello World!",
     title: "Message",
     variant: "info",
@@ -23,21 +21,15 @@ function onClick(): void {
 function onError(): void {
   throw new Error("Oops! Something happened...");
 }
-
-function removeToast(toast: ToastOptions): void {
-  if (toast.id) {
-    toasts.value.delete(toast.id);
-  }
-}
 </script>
 
 <template>
   <main class="container">
     <h1>Home</h1>
     <div class="mb-3">
-      <TarButton class="me-2" text="Message" @click="onClick" />
-      <TarButton text="Error" variant="danger" @click="onError" />
+      <TarButton class="me-2" :icon="['fas', 'paper-plane']" text="Message" @click="onClick" />
+      <TarButton text="Error" :icon="['fas', 'bomb']" variant="danger" @click="onError" />
     </div>
-    <TarToaster :toasts="Array.from(toasts.values())" @hidden="removeToast" />
+    <TarToaster :toasts="store.toasts" @hidden="store.remove" />
   </main>
 </template>
