@@ -42,11 +42,11 @@ const classes = computed<string[]>(() => {
 
 /**
  * Adds a toast to the toast container.
- * @param options The toast to add.
+ * @param toast The toast to add.
  */
-function toast(options: ToastOptions): void {
-  options.id ??= `${props.id}-toast-${nanoid()}`;
-  toasts.value.set(options.id, options);
+function toast(toast: ToastOptions): void {
+  toast.id ??= `${props.id}-toast-${nanoid()}`;
+  toasts.value.set(toast.id, toast);
 }
 defineExpose({ toast });
 </script>
