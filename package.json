@@ -1,6 +1,6 @@
 {
   "name": "logitar-vue3-ui",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Helper functions & Bootstrap5 component library for Vue3 distributed by Logitar.",
   "keywords": [
     "logitar",
@@ -47,11 +47,10 @@
     "email": "francispion@hotmail.com",
     "url": "https://www.francispion.ca/"
   },
-  "files": [
-    "dist"
-  ],
+  "files": [],
   "main": "./dist/logitar-vue3-ui.umd.cjs",
   "module": "./dist/logitar-vue3-ui.js",
+  "style": "./dist/style.css",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
