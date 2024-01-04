@@ -1,6 +1,6 @@
 {
   "name": "logitar-vue3-ui",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Helper functions & Bootstrap5 component library for Vue3 distributed by Logitar.",
   "keywords": [
     "logitar",
@@ -63,6 +63,10 @@
       "import": "./dist/logitar-vue3-ui.js",
       "require": "./dist/logitar-vue3-ui.umd.cjs",
       "types": "./dist/index.d.ts"
+    },
+    "./dist/**/*.css": {
+      "import": "./dist/**/*.css",
+      "require": "./dist/**/*.css"
     }
   },
   "repository": {
