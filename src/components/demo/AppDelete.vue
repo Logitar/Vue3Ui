@@ -8,6 +8,7 @@ import TarModal from "../TarModal.vue";
 const props = withDefaults(
   defineProps<{
     confirm: string;
+    disabled?: boolean;
     displayName: string;
     id?: string;
     loading?: boolean;
@@ -34,7 +35,7 @@ defineEmits<{
 <template>
   <span>
     <TarButton
-      :disabled="loading"
+      :disabled="disabled"
       icon="fas fa-trash-can"
       :loading="loading"
       text="Delete"
