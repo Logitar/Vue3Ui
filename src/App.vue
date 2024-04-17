@@ -1,18 +1,27 @@
 <script setup lang="ts">
+import { computed, onMounted, onUpdated, ref } from "vue";
 import { nanoid } from "nanoid";
-import { onMounted, onUpdated, ref } from "vue";
 
 import AppDelete from "./components/demo/AppDelete.vue";
 import TarButton from "./components/TarButton.vue";
 import TarInput from "./components/TarInput.vue";
 import TarToaster from "./components/TarToaster.vue";
-import { useToastStore } from "./stores/toast";
+import type { InputStatus } from "./types/TarInput";
 import { registerTooltips } from "./helpers/tooltipUtils";
+import { useToastStore } from "./stores/toast";
 
 const store = useToastStore();
 
 const emailAddress = ref<string>("");
 const isDeleting = ref<boolean>(false);
+const isTouched = ref<boolean>(false);
+
+const status = computed<InputStatus | undefined>(() => (isTouched.value ? (emailAddress.value ? "valid" : "invalid") : undefined));
+
+function reset(): void {
+  emailAddress.value = "";
+  isTouched.value = false;
+}
 
 function onSubmit(): void {
   store.add({
@@ -23,14 +32,14 @@ function onSubmit(): void {
     title: "Message",
     variant: "info",
   });
-  emailAddress.value = "";
+  reset();
 }
 
 function onDelete(hideModal: () => void): void {
   if (!isDeleting.value) {
     isDeleting.value = true;
     setTimeout(() => {
-      emailAddress.value = "";
+      reset();
       store.add({
         duration: 15 * 1000,
         fade: true,
@@ -42,6 +51,11 @@ function onDelete(hideModal: () => void): void {
       isDeleting.value = false;
     }, 2500);
   }
+}
+
+function onEmailAddressUpdate(value?: string): void {
+  isTouched.value = true;
+  emailAddress.value = value ?? "";
 }
 
 function onError(): void {
@@ -64,11 +78,13 @@ onUpdated(registerTooltips);
         label="Email Address"
         min="1"
         max="255"
+        :model-value="emailAddress"
         name="email_address"
         placeholder="Email Address"
         required
+        :status="status"
         type="email"
-        v-model="emailAddress"
+        @update:model-value="onEmailAddressUpdate"
       >
         <template #after>
           <div id="email-address-help" class="form-text">We'll never share your email with anyone else.</div>

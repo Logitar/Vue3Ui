@@ -31,6 +31,9 @@ const classes = computed<string[]>(() => {
       classes.push("form-control-sm");
       break;
   }
+  if (props.status) {
+    classes.push(`is-${props.status}`);
+  }
   return classes;
 });
 
