@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 
 import type { InputOptions } from "@/types/TarInput";
+import { isDateTimeInput, isNumericInput, isTextualInput } from "@/helpers/inputUtils";
 import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
 
 const props = defineProps<InputOptions>();
@@ -33,64 +34,35 @@ const classes = computed<string[]>(() => {
   return classes;
 });
 
-const isDateTimeInput = computed<boolean>(() => {
-  switch (props.type) {
-    case "date":
-    case "datetime-local":
-    case "month":
-    case "time":
-    case "week":
-      return true;
-  }
-  return false;
-});
-const isNumericInput = computed<boolean>(() => {
-  switch (props.type) {
-    case "number":
-    case "range":
-      return true;
-  }
-  return false;
-});
-const isTextualInput = computed<boolean>(() => {
-  switch (props.type) {
-    case "email":
-    case "password":
-    case "search":
-    case "tel":
-    case "text":
-    case "url":
-    case undefined:
-      return true;
-  }
-  return false;
-});
+const isDateTime = computed<boolean>(() => isDateTimeInput(props.type));
+const isNumeric = computed<boolean>(() => isNumericInput(props.type));
+const isTextual = computed<boolean>(() => isTextualInput(props.type));
 const maxLength = computed<number | undefined>(() => {
-  return isTextualInput.value ? parseNumber(props.max) || undefined : undefined;
+  return isTextual.value ? parseNumber(props.max) || undefined : undefined;
 });
 const maxValue = computed<number | string | undefined>(() => {
-  if (isNumericInput.value) {
+  if (isNumeric.value) {
     return parseNumber(props.max);
-  } else if (isDateTimeInput.value) {
+  } else if (isDateTime.value) {
     return props.max;
   }
   return undefined;
 });
 const minLength = computed<number | undefined>(() => {
-  return isTextualInput.value ? parseNumber(props.min) || undefined : undefined;
+  return isTextual.value ? parseNumber(props.min) || undefined : undefined;
 });
 const minValue = computed<number | string | undefined>(() => {
-  if (isNumericInput.value) {
+  if (isNumeric.value) {
     return parseNumber(props.min);
-  } else if (isDateTimeInput.value) {
+  } else if (isDateTime.value) {
     return props.min;
   }
   return undefined;
 });
 const inputStep = computed<number | string | undefined>(() => {
-  if (isNumericInput.value) {
+  if (isNumeric.value) {
     return parseNumber(props.step);
-  } else if (isDateTimeInput.value) {
+  } else if (isDateTime.value) {
     const step = typeof props.step === "string" ? props.step.trim() : props.step;
     return step === "any" ? step : parseNumber(step);
   }
