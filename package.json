@@ -74,11 +74,9 @@
     "url": "https://github.com/Logitar/Vue3Ui"
   },
   "type": "module",
-  "packageManager": "yarn@4.0.2",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
     "test": "vitest run --coverage",
     "test:dev": "vitest",
     "build-only": "vite build",

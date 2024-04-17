@@ -24,71 +24,65 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 ## Project Setup
 
 ```sh
-yarn
+npm install
 ```
 
 ### Compile and Hot-Reload for Development
 
 ```sh
-yarn dev
+npm run dev
 ```
 
 ### Type-Check, Compile and Minify for Production
 
 ```sh
-yarn build
-```
-
-### Preview the Last Build from dist
-
-```sh
-yarn preview
+npm run build
 ```
 
 ### Run Unit Tests and Code Coverage with [Vitest](https://vitest.dev/)
 
 ```sh
-yarn test
+npm run test
 ```
 
 ### Run Unit Tests with Vitest
 
 ```sh
-yarn test:dev
+npm run test:dev
 ```
 
 ### Build the Application Without Type Checking
 
 ```sh
-yarn build-only
+npm run build-only
 ```
 
 ### Type Check the Application Code Without Building
 
 ```sh
-yarn type-check
+npm run type-check
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
-yarn lint
+npm run lint
 ```
 
 ### Format with [Prettier](https://prettier.io/)
 
 ```sh
-yarn format
+npm run format
 ```
 
 ### Run [Storybook](https://storybook.js.org/) with Hot-Reload for Development
 
 ```sh
-yarn storybook
+npm run storybook
 ```
 
 ### Build the Storybook for Production
 
 ```sh
-yarn storybook:build
+npm run storybook:build
 ```
