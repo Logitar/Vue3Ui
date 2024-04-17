@@ -7,7 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- Implemented `inputUtils` to handle input types.
+- `TarInput` status property and styling.
+
+### Changed
+
+- Call Bootstrap `getOrCreateInstance` methods instead of creating a new instance of components.
+- Refactored `TarInput` type property handling.
 
 ## [2.0.5] - 2024-01-04
 
