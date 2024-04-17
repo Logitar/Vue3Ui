@@ -75,6 +75,10 @@ export type InputOptions = {
    */
   size?: InputSize;
   /**
+   * The status of the input. The input will display a valid style (green border) or invalid style (red border) when specified.
+   */
+  status?: InputStatus;
+  /**
    * - For numeric inputs (number and range), the value of each increase or decrease.
    * - For date/time inputs (date, time, month, week, and datetime-local), the value can be a number or "any". Its interpretation depends on the input type, so please consult documentation about inputs if you are unsure about how to use the step for those input types.
    */
@@ -89,6 +93,11 @@ export type InputOptions = {
  * The sizes of the TarInput component.
  */
 export type InputSize = "small" | "medium" | "large";
+
+/**
+ * The status values of the TarInput component.
+ */
+export type InputStatus = "invalid" | "valid";
 
 /**
  * The types of the TarInput component.

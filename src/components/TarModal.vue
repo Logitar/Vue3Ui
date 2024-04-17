@@ -84,7 +84,12 @@ function toggle(): void {
 }
 defineExpose({ hide, show, toggle });
 
-onMounted(() => (modal.value = new Modal(`#${modalId.value}`)));
+onMounted(() => {
+  const element = document.getElementById(modalId.value);
+  if (element) {
+    modal.value = Modal.getOrCreateInstance(element);
+  }
+});
 </script>
 
 <template>
