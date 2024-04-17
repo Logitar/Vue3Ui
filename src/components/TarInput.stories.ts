@@ -161,3 +161,19 @@ export const DateInputs: Story = {
     `,
   }),
 };
+
+export const ValidatedInputs: Story = {
+  render: () => ({
+    components: { TarInput },
+    template: `
+      <div class="was-validated">
+        <TarInput floating id="email-address" label="Email Address" model-value="your@email.com" placeholder="Email Address" required status="valid" type="email" />
+        <TarInput described-by="password-invalid-feedback" floating id="password" label="Password" placeholder="Password" required status="invalid" type="password">
+          <template #after>
+            <div class="invalid-feedback" id="password-invalid-feedback">The password is required.</div>
+          </template>
+        </TarInput>
+      </div>
+    `,
+  }),
+};
