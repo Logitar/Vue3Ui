@@ -43,7 +43,7 @@ export const ColoredAlerts: Story = {
       <TarAlert show variant="success"><strong>success</strong>: the requested operation has completed.</TarAlert>
       <TarAlert show variant="danger"><strong>danger</strong>: an unexpected error occurred.</TarAlert>
       <TarAlert show variant="warning"><strong>warning</strong>: there are validation errors in the form below.</TarAlert>
-      <TarAlert show variant="info"><strong>info</strong>: some useful info here...</TarAlert>
+      <TarAlert show variant="info"><strong>info</strong>: some useful info here…</TarAlert>
       <TarAlert show variant="light"><strong>light</strong>: works better in a dark theme.</TarAlert>
       <TarAlert show variant="dark"><strong>dark</strong>: works better in a light theme.</TarAlert>
     `,

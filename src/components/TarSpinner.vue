@@ -5,7 +5,7 @@ import type { SpinnerOptions } from "@/types/TarSpinner";
 import { parseBoolean } from "@/helpers/parsingUtils";
 
 const props = withDefaults(defineProps<SpinnerOptions>(), {
-  label: "Loading...",
+  label: "Loading…",
   role: "status",
 });
 

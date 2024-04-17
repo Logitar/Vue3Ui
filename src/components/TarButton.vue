@@ -8,7 +8,7 @@ import { parseBoolean } from "@/helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ButtonOptions>(), {
   size: "medium",
-  status: "Loading...",
+  status: "Loading…",
   type: "button",
   variant: "primary",
 });
