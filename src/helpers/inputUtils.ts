@@ -34,5 +34,3 @@ export function isTextualInput(type?: InputType): boolean {
   }
   return false;
 }
-
-// TODO(fpion): unit tests

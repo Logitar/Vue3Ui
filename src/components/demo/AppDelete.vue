@@ -7,7 +7,6 @@ import TarModal from "../TarModal.vue";
 
 const props = withDefaults(
   defineProps<{
-    close?: string;
     confirm: string;
     displayName: string;
     id?: string;
@@ -15,7 +14,6 @@ const props = withDefaults(
     title: string;
   }>(),
   {
-    close: "actions.close",
     id: () => nanoid(),
   },
 );
@@ -37,7 +35,7 @@ defineEmits<{
   <span>
     <TarButton
       :disabled="loading"
-      icon="fas fa-trash"
+      icon="fas fa-trash-can"
       :loading="loading"
       text="Delete"
       variant="danger"
@@ -54,7 +52,7 @@ defineEmits<{
         <TarButton icon="fas fa-ban" text="Cancel" variant="secondary" @click="hide" />
         <TarButton
           :disabled="loading"
-          icon="fas fa-trash"
+          icon="fas fa-trash-can"
           :loading="loading"
           status="Loading…"
           text="Delete"
