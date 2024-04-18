@@ -3,7 +3,7 @@
  */
 export type SelectOption = {
   /**
-   * The input will display with a disabled style and will not react to events.
+   * The option will display with a disabled style and will not react to events.
    */
   disabled?: boolean;
   /**
@@ -88,6 +88,6 @@ export type SelectOptions = {
 export type SelectSize = "small" | "medium" | "large";
 
 /**
- * The status values of the TarInput component.
+ * The status values of the TarSelect component.
  */
 export type SelectStatus = "invalid" | "valid";
