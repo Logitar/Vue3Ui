@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+Nothing yet.
+
+## [2.1.1] - 2024-04-17
+
 ### Added
 
 - NPM package publication workflow.
@@ -96,7 +100,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implemented an Image component.
 - Implemented an Input component.
 
-[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v2.1.0...HEAD
+[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v2.1.1...HEAD
+[2.1.1]: https://github.com/Logitar/Vue3Ui/compare/v2.1.0...v2.1.1
 [2.1.0]: https://github.com/Logitar/Vue3Ui/compare/v2.0.5...v2.1.0
 [2.0.5]: https://github.com/Logitar/Vue3Ui/compare/v2.0.4...v2.0.5
 [2.0.4]: https://github.com/Logitar/Vue3Ui/compare/v2.0.3...v2.0.4
