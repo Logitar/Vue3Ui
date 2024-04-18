@@ -19,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Refactored `TarInput` type property handling.
 - Replaced `...` by `…`.
 - Replaced `yarn` by NPM.
+- Upgraded NuGet packages.
 
 ### Fixed
 
