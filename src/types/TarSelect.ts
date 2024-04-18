@@ -76,9 +76,18 @@ export type SelectOptions = {
    * The size of the select.
    */
   size?: SelectSize;
+  /**
+   * The status of the select. The select will display a valid style (green border) or invalid style (red border) when specified.
+   */
+  status?: SelectStatus;
 };
 
 /**
  * The sizes of the TarSelect component.
  */
 export type SelectSize = "small" | "medium" | "large";
+
+/**
+ * The status values of the TarInput component.
+ */
+export type SelectStatus = "invalid" | "valid";

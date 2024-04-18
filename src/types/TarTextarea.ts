@@ -66,9 +66,18 @@ export type TextareaOptions = {
    * The size of the textarea.
    */
   size?: TextareaSize;
+  /**
+   * The status of the textarea. The textarea will display a valid style (green border) or invalid style (red border) when specified.
+   */
+  status?: TextareaStatus;
 };
 
 /**
  * The sizes of the TarTextarea component.
  */
 export type TextareaSize = "small" | "medium" | "large";
+
+/**
+ * The status values of the TarTextarea component.
+ */
+export type TextareaStatus = "invalid" | "valid";
