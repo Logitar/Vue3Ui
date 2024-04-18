@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { ProgressOptions } from "@/types/TarProgress";
-import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
+import type { ProgressOptions } from "../types/TarProgress";
+import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ProgressOptions>(), {
   max: 100,

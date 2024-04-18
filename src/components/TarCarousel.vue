@@ -2,8 +2,8 @@
 import { computed } from "vue";
 
 import TarImage from "./TarImage.vue";
-import type { CarouselOptions } from "@/types/TarCarousel";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { CarouselOptions } from "../types/TarCarousel";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<CarouselOptions>(), {
   id: "carousel",

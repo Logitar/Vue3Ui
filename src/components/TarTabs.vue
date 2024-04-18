@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { provide, ref } from "vue";
 
-import { type TabContainerOptions, type TabOptions, bindTabKey, unbindTabKey } from "@/types/TarTabs";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import { type TabContainerOptions, type TabOptions, bindTabKey, unbindTabKey } from "../types/TarTabs";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 withDefaults(defineProps<TabContainerOptions>(), {
   id: "tabs",

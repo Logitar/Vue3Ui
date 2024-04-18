@@ -37,7 +37,7 @@ const meta = {
     nowrap: false,
     outline: false,
     size: "medium",
-    status: "Loading...",
+    status: "Loading…",
     text: "Click me!",
     type: "button",
     value: undefined,

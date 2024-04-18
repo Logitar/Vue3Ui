@@ -59,7 +59,7 @@ function onEmailAddressUpdate(value?: string): void {
 }
 
 function onError(): void {
-  throw new Error("Oops! Something happened...");
+  throw new Error("Oops! Something happened…");
 }
 
 onMounted(registerTooltips);

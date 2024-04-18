@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { AlertOptions } from "@/types/TarAlert";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { AlertOptions } from "../types/TarAlert";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<AlertOptions>(), {
   close: "Close",

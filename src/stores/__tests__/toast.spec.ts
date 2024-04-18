@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { createPinia, setActivePinia } from "pinia";
 
-import type { ToastOptions } from "@/types/TarToasts";
+import type { ToastOptions } from "../../types/TarToasts";
 import { useToastStore } from "../toast";
 
 const toast: ToastOptions = {
@@ -17,7 +17,7 @@ describe("toastStore", () => {
     setActivePinia(createPinia());
   });
 
-  it.concurrent("should add a toast to the list", () => {
+  it("should add a toast to the list", () => {
     const toasts = useToastStore();
     expect(toasts.toasts.length).toBe(0);
 
@@ -26,7 +26,7 @@ describe("toastStore", () => {
     expect(toasts.toasts.at(0)?.id).toBe(toast.id);
   });
 
-  it.concurrent("should remove a toast from the list", () => {
+  it("should remove a toast from the list", () => {
     const toasts = useToastStore();
     expect(toasts.toasts.length).toBe(0);
 

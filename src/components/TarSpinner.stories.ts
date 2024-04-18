@@ -12,7 +12,7 @@ const meta = {
   args: {
     grow: false,
     inline: false,
-    label: "Loading...",
+    label: "Loading…",
     role: "status",
     small: false,
     variant: undefined,

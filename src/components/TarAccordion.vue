@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, provide, ref, watch } from "vue";
 
-import { bindItemKey, unbindItemKey, type AccordionOptions } from "@/types/TarAccordion";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import { bindItemKey, unbindItemKey, type AccordionOptions } from "../types/TarAccordion";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<AccordionOptions>(), {
   id: "accordion",

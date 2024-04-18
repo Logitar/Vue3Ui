@@ -2,8 +2,8 @@
 import { computed, inject, onMounted, onUnmounted, ref } from "vue";
 import { nanoid } from "nanoid";
 
-import { bindItemKey, unbindItemKey, type AccordionItem } from "@/types/TarAccordion";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import { bindItemKey, unbindItemKey, type AccordionItem } from "../types/TarAccordion";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const bindItem: ((id: string, setParentId: (value?: string) => void) => void) | undefined = inject(bindItemKey);
 const unbindItem: ((id: string) => void) | undefined = inject(unbindItemKey);

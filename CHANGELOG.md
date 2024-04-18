@@ -17,7 +17,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Call Bootstrap `getOrCreateInstance` methods instead of creating a new instance of components.
 - Refactored `TarInput` type property handling.
+- Replaced `...` by `…`.
 - Replaced `yarn` by NPM.
+
+### Fixed
+
+- Storybook component property documentation.
 
 ## [2.0.5] - 2024-01-04
 

@@ -9,7 +9,7 @@ export type SpinnerOptions = {
   /**
    * The spinner will not include a hidden text for accessibility. You have to add this code directly below the spinner:
    *
-   * `<span class="visually-hidden" role="status">Loading...</span>`
+   * `<span class="visually-hidden" role="status">Loading…</span>`
    */
   inline?: boolean | string;
   /**

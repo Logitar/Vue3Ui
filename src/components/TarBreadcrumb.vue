@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Breadcrumb, BreadcrumbOptions } from "@/types/TarBreadcrumb";
+import type { Breadcrumb, BreadcrumbOptions } from "../types/TarBreadcrumb";
 
 withDefaults(defineProps<BreadcrumbOptions>(), {
   breadcrumbs: () => [],

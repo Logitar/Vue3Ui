@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { BadgeOptions } from "@/types/TarBadge";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { BadgeOptions } from "../types/TarBadge";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<BadgeOptions>(), {
   variant: "primary",

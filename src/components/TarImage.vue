@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { ImageOptions } from "@/types/TarImage";
-import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
+import type { ImageOptions } from "../types/TarImage";
+import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
 
 const props = defineProps<ImageOptions>();
 

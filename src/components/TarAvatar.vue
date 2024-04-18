@@ -5,8 +5,8 @@ import { computed } from "vue";
 
 import TarBadge from "./TarBadge.vue";
 import TarImage from "./TarImage.vue";
-import type { AvatarOptions } from "@/types/TarAvatar";
-import { parseNumber } from "@/helpers/parsingUtils";
+import type { AvatarOptions } from "../types/TarAvatar";
+import { parseNumber } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<AvatarOptions>(), {
   icon: "fas fa-user",

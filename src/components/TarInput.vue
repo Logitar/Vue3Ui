@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-import type { InputOptions } from "@/types/TarInput";
-import { isDateTimeInput, isNumericInput, isTextualInput } from "@/helpers/inputUtils";
-import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
+import type { InputOptions } from "../types/TarInput";
+import { isDateTimeInput, isNumericInput, isTextualInput } from "../helpers/inputUtils";
+import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
 
 const props = defineProps<InputOptions>();
 
