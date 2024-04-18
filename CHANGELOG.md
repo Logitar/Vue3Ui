@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- Implemented status property on `TarSelect` and `TarTextarea` components.
 
 ## [2.2.0] - 2024-04-17
 
