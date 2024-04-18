@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - NPM package publication workflow.
 
+### Fixed
+
+- Export `inputUtils`.
+
 ## [2.1.0] - 2024-04-17
 
 ### Added
