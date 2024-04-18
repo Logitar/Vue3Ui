@@ -1,3 +1,4 @@
+import * as inputUtils from "./helpers/inputUtils";
 import * as parsingUtils from "./helpers/parsingUtils";
 import * as tooltipUtils from "./helpers/tooltipUtils";
 import TarAccordion from "./components/TarAccordion.vue";
@@ -65,6 +66,7 @@ export {
   TarTextarea,
   TarToast,
   TarToaster,
+  inputUtils,
   parsingUtils,
   tooltipUtils,
 };
