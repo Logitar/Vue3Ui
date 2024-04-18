@@ -3,8 +3,8 @@ import { Modal } from "bootstrap";
 import { computed, onMounted, ref } from "vue";
 import { nanoid } from "nanoid";
 
-import type { ModalOptions } from "@/types/TarModal";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { ModalOptions } from "../types/TarModal";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ModalOptions>(), {
   close: "Close",

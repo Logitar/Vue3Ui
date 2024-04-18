@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it } from "vitest";
 import { createPinia, setActivePinia } from "pinia";
 
-import type { ToastOptions } from "@/types/TarToasts";
+import type { ToastOptions } from "../../types/TarToasts";
 import { useToastStore } from "../toast";
 
 const toast: ToastOptions = {

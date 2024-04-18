@@ -20,6 +20,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Replaced `...` by `…`.
 - Replaced `yarn` by NPM.
 
+### Fixed
+
+- Storybook component property documentation.
+
 ## [2.0.5] - 2024-01-04
 
 ### Fixed

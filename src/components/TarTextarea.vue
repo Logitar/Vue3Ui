@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 
-import type { TextareaOptions } from "@/types/TarTextarea";
-import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
+import type { TextareaOptions } from "../types/TarTextarea";
+import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
 
 const props = defineProps<TextareaOptions>();
 const textareaRef = ref<HTMLTextAreaElement>();

@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { ref } from "vue";
 
-import type { ToastOptions } from "@/types/TarToasts";
+import type { ToastOptions } from "../types/TarToasts";
 
 export const useToastStore = defineStore("toast", () => {
   const toasts = ref<ToastOptions[]>([]);

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import TarImage from "./TarImage.vue";
 
-import type { CardOptions } from "@/types/TarCard";
+import type { CardOptions } from "../types/TarCard";
 
 defineProps<CardOptions>();
 </script>

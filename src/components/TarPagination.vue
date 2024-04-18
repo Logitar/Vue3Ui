@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 
-import type { PaginationOptions } from "@/types/TarPagination";
+import type { PaginationOptions } from "../types/TarPagination";
 
 const props = withDefaults(defineProps<PaginationOptions>(), {
   ariaFirst: "First",

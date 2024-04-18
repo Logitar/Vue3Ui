@@ -1,4 +1,4 @@
-import type { InputType } from "@/types/TarInput";
+import type { InputType } from "../types/TarInput";
 
 export function isDateTimeInput(type?: InputType): boolean {
   switch (type) {

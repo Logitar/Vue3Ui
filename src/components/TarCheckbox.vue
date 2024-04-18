@@ -2,8 +2,8 @@
 import { computed, ref } from "vue";
 import { nanoid } from "nanoid";
 
-import type { CheckboxOptions } from "@/types/TarCheckbox";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { CheckboxOptions } from "../types/TarCheckbox";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = defineProps<CheckboxOptions>();
 

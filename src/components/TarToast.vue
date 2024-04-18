@@ -3,8 +3,8 @@ import { Toast } from "bootstrap";
 import { computed, onMounted, watch } from "vue";
 import { nanoid } from "nanoid";
 
-import type { ToastOptions } from "@/types/TarToasts";
-import { parseBoolean, parseNumber } from "@/helpers/parsingUtils";
+import type { ToastOptions } from "../types/TarToasts";
+import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ToastOptions>(), {
   close: "Close",

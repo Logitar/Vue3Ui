@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
 
 import TarSpinner from "./TarSpinner.vue";
-import type { ButtonOptions } from "@/types/TarButton";
-import { parseBoolean } from "@/helpers/parsingUtils";
+import type { ButtonOptions } from "../types/TarButton";
+import { parseBoolean } from "../helpers/parsingUtils";
 
 const props = withDefaults(defineProps<ButtonOptions>(), {
   size: "medium",

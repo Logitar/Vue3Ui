@@ -2,7 +2,7 @@
 import { computed, inject, onMounted, onUnmounted, onUpdated } from "vue";
 import { nanoid } from "nanoid";
 
-import { bindTabKey, unbindTabKey, type TabOptions } from "@/types/TarTabs";
+import { bindTabKey, unbindTabKey, type TabOptions } from "../types/TarTabs";
 
 const bindTab: ((tab: TabOptions) => void) | undefined = inject(bindTabKey);
 const unbindTab: ((tab: TabOptions) => void) | undefined = inject(unbindTabKey);

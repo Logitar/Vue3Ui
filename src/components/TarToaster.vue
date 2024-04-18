@@ -2,7 +2,7 @@
 import { computed } from "vue";
 
 import TarToast from "./TarToast.vue";
-import type { ToastContainerOptions, ToastOptions } from "@/types/TarToasts";
+import type { ToastContainerOptions, ToastOptions } from "../types/TarToasts";
 
 const props = withDefaults(defineProps<ToastContainerOptions>(), {
   horizontalAlignment: "right",
