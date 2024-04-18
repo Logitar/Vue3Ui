@@ -67,7 +67,7 @@ export type InputOptions = {
    */
   readonly?: boolean | string;
   /**
-   * The input is required to submit the form its contained into.
+   * The input is required to submit the form its contained into. If the value is `label`, then the input label will appear as required, but the input itself will not have the required attribute. This is useful for client-validated forms.
    */
   required?: boolean | string;
   /**
