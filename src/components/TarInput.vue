@@ -13,6 +13,7 @@ const isDisabled = computed<boolean>(() => parseBoolean(props.disabled) ?? false
 const isFloating = computed<boolean>(() => parseBoolean(props.floating) ?? false);
 const isReadonly = computed<boolean>(() => parseBoolean(props.readonly) ?? false);
 const isRequired = computed<boolean>(() => parseBoolean(props.required) ?? false);
+const isLabelRequired = computed<boolean>(() => isRequired.value || (typeof props.required === "string" && props.required.trim().toLowerCase() === "label"));
 
 const classes = computed<string[]>(() => {
   const classes: string[] = [];
@@ -93,7 +94,7 @@ defineEmits<{
     <slot v-if="!isFloating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
-        <slot name="label-required" v-if="isRequired">
+        <slot name="label-required" v-if="isLabelRequired">
           <span class="text-danger">*</span>
         </slot>
       </label>
@@ -127,7 +128,7 @@ defineEmits<{
         <slot name="label-override">
           <label :for="id">
             {{ label }}
-            <slot name="label-required" v-if="isRequired">
+            <slot name="label-required" v-if="isLabelRequired">
               <span class="text-danger">*</span>
             </slot>
           </label>

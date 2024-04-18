@@ -24,15 +24,18 @@ function reset(): void {
 }
 
 function onSubmit(): void {
-  store.add({
-    duration: 15 * 1000,
-    fade: true,
-    id: nanoid(),
-    text: `Hello ${emailAddress.value}!`,
-    title: "Message",
-    variant: "info",
-  });
-  reset();
+  isTouched.value = true;
+  if (emailAddress.value) {
+    store.add({
+      duration: 15 * 1000,
+      fade: true,
+      id: nanoid(),
+      text: `Hello ${emailAddress.value}!`,
+      title: "Message",
+      variant: "info",
+    });
+    reset();
+  }
 }
 
 function onDelete(hideModal: () => void): void {
@@ -81,7 +84,7 @@ onUpdated(registerTooltips);
         :model-value="emailAddress"
         name="email_address"
         placeholder="Email Address"
-        required
+        required="  LABEL  "
         :status="status"
         type="email"
         @update:model-value="onEmailAddressUpdate"
