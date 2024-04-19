@@ -55,11 +55,11 @@ export type TextareaOptions = {
    */
   readonly?: boolean | string;
   /**
-   * The textarea is required to submit the form its contained into.
+   * The textarea is required to submit the form its contained into. If the value is `label`, then the textarea label will appear as required, but the textarea itself will not have the required attribute. This is useful for client-validated forms.
    */
   required?: boolean | string;
   /**
-   * The number of visible text lines of the text area.
+   * The number of visible text lines of the textarea.
    */
   rows?: number | string;
   /**
