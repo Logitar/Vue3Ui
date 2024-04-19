@@ -69,7 +69,7 @@ export type SelectOptions = {
    */
   placeholder?: string;
   /**
-   * The select is required to submit the form its contained into.
+   * The select is required to submit the form its contained into. If the value is `label`, then the select label will appear as required, but the select itself will not have the required attribute. This is useful for client-validated forms.
    */
   required?: boolean | string;
   /**
