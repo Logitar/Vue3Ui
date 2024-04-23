@@ -1,3 +1,5 @@
+import * as parsingUtils from "logitar-js";
+
 import * as inputUtils from "./helpers/inputUtils";
 import * as tooltipUtils from "./helpers/tooltipUtils";
 import TarAccordion from "./components/TarAccordion.vue";
@@ -66,5 +68,6 @@ export {
   TarToast,
   TarToaster,
   inputUtils,
+  parsingUtils,
   tooltipUtils,
 };
