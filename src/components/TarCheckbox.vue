@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { nanoid } from "nanoid";
+import { parsingUtils } from "logitar-js";
 
 import type { CheckboxOptions } from "../types/TarCheckbox";
-import { parseBoolean } from "../helpers/parsingUtils";
+
+const { parseBoolean } = parsingUtils;
 
 const props = defineProps<CheckboxOptions>();
 

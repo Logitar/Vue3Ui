@@ -87,7 +87,7 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
-    "logitar-js": "^0.1.0",
+    "logitar-js": "^0.3.0",
     "md5": "^2.3.0",
     "nanoid": "^5.0.4"
   },

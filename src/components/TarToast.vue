@@ -2,9 +2,11 @@
 import { Toast } from "bootstrap";
 import { computed, onMounted, watch } from "vue";
 import { nanoid } from "nanoid";
+import { parsingUtils } from "logitar-js";
 
 import type { ToastOptions } from "../types/TarToasts";
-import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
+
+const { parseBoolean, parseNumber } = parsingUtils;
 
 const props = withDefaults(defineProps<ToastOptions>(), {
   close: "Close",

@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import type { InputOptions } from "../types/TarInput";
 import { isDateTimeInput, isNumericInput, isTextualInput } from "../helpers/inputUtils";
-import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
+
+const { parseBoolean, parseNumber } = parsingUtils;
 
 const props = defineProps<InputOptions>();
 
