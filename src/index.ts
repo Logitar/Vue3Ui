@@ -1,6 +1,11 @@
+import * as arrayUtils from "./helpers/arrayUtils";
+import * as dateUtils from "./helpers/dateUtils";
 import * as inputUtils from "./helpers/inputUtils";
+import * as objectUtils from "./helpers/objectUtils";
 import * as parsingUtils from "./helpers/parsingUtils";
+import * as stringUtils from "./helpers/stringUtils";
 import * as tooltipUtils from "./helpers/tooltipUtils";
+import * as urlUtils from "./helpers/urlUtils";
 import TarAccordion from "./components/TarAccordion.vue";
 import TarAccordionItem from "./components/TarAccordionItem.vue";
 import TarAlert from "./components/TarAlert.vue";
@@ -66,7 +71,12 @@ export {
   TarTextarea,
   TarToast,
   TarToaster,
+  arrayUtils,
+  dateUtils,
   inputUtils,
+  objectUtils,
   parsingUtils,
+  stringUtils,
   tooltipUtils,
+  urlUtils,
 };
