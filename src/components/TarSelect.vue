@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import type { SelectOptions } from "../types/TarSelect";
-import { parseBoolean } from "../helpers/parsingUtils";
+
+const { parseBoolean } = parsingUtils;
 
 const props = withDefaults(defineProps<SelectOptions>(), {
   options: () => [],

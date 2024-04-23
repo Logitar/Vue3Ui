@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import type { ImageOptions } from "../types/TarImage";
-import { parseBoolean, parseNumber } from "../helpers/parsingUtils";
+
+const { parseBoolean, parseNumber } = parsingUtils;
 
 const props = defineProps<ImageOptions>();
 

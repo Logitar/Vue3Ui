@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import TarSpinner from "./TarSpinner.vue";
 import type { ButtonOptions } from "../types/TarButton";
-import { parseBoolean } from "../helpers/parsingUtils";
+
+const { parseBoolean } = parsingUtils;
 
 const props = withDefaults(defineProps<ButtonOptions>(), {
   size: "medium",

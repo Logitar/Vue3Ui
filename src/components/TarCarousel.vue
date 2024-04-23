@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import TarImage from "./TarImage.vue";
 import type { CarouselOptions } from "../types/TarCarousel";
-import { parseBoolean } from "../helpers/parsingUtils";
+
+const { parseBoolean } = parsingUtils;
 
 const props = withDefaults(defineProps<CarouselOptions>(), {
   id: "carousel",

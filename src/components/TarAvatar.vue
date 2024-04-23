@@ -2,11 +2,13 @@
 import md5 from "md5";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { computed } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import TarBadge from "./TarBadge.vue";
 import TarImage from "./TarImage.vue";
 import type { AvatarOptions } from "../types/TarAvatar";
-import { parseNumber } from "../helpers/parsingUtils";
+
+const { parseNumber } = parsingUtils;
 
 const props = withDefaults(defineProps<AvatarOptions>(), {
   icon: "fas fa-user",

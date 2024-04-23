@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { computed } from "vue";
+import { parsingUtils } from "logitar-js";
 
 import type { AlertOptions } from "../types/TarAlert";
-import { parseBoolean } from "../helpers/parsingUtils";
+
+const { parseBoolean } = parsingUtils;
 
 const props = withDefaults(defineProps<AlertOptions>(), {
   close: "Close",
