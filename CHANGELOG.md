@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-Nothing yet.
+### Added
+
+- New helpers: `arrayUtils`, `dateUtils`, `objectUtils`, `stringUtils` and `urlUtils`.
+
+### Fixed
+
+- Completed existing helpers documentation.
 
 ## [2.4.0] - 2024-04-18
 
