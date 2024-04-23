@@ -1,4 +1,4 @@
-import * as parsingUtils from "logitar-js";
+import { parsingUtils } from "logitar-js";
 
 import * as inputUtils from "./helpers/inputUtils";
 import * as tooltipUtils from "./helpers/tooltipUtils";
