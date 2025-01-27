@@ -66,11 +66,14 @@ const minValue = computed<number | string | undefined>(() => {
   return undefined;
 });
 const inputStep = computed<number | string | undefined>(() => {
+  if (typeof props.step === "string" && props.step.trim().toLowerCase() === "any") {
+    return "any";
+  }
   if (isNumeric.value) {
     return parseNumber(props.step);
   } else if (isDateTime.value) {
     const step = typeof props.step === "string" ? props.step.trim() : props.step;
-    return step === "any" ? step : parseNumber(step);
+    return parseNumber(step);
   }
   return undefined;
 });
