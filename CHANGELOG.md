@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
+## [3.0.0] - 2025-02-18
+
+### Changed
+
+- `TarInput`, `TarSelect` and `TarTextarea` do not specify the `mb-3` class anymore.
+
+### Fixed
+
+- NPM upgrades.
+
 ## [2.5.3] - 2025-01-27
 
 ### Fixed
@@ -151,7 +161,8 @@ Nothing yet.
 - Implemented an Image component.
 - Implemented an Input component.
 
-[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v2.5.3...HEAD
+[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v3.0.0...HEAD
+[3.0.0]: https://github.com/Logitar/Vue3Ui/compare/v2.5.3...v3.0.0
 [2.5.3]: https://github.com/Logitar/Vue3Ui/compare/v2.5.2...v2.5.3
 [2.5.2]: https://github.com/Logitar/Vue3Ui/compare/v2.5.1...v2.5.2
 [2.5.1]: https://github.com/Logitar/Vue3Ui/compare/v2.5.0...v2.5.1

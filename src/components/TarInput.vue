@@ -95,7 +95,7 @@ defineEmits<{
 </script>
 
 <template>
-  <div class="mb-3">
+  <div>
     <slot v-if="!isFloating" name="label-override">
       <label v-if="label" :for="id" class="form-label">
         {{ label }}
