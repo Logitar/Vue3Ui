@@ -15,6 +15,10 @@ Nothing yet.
 
 - `TarInput`, `TarSelect` and `TarTextarea` do not specify the `mb-3` class anymore.
 
+### Fixed
+
+- NPM upgrades.
+
 ## [2.5.3] - 2025-01-27
 
 ### Fixed
