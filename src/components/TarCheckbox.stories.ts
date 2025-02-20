@@ -8,6 +8,7 @@ const meta = {
   tags: ["autodocs"],
   args: {
     ariaLabel: "",
+    describedBy: "",
     disabled: false,
     id: "completed",
     inline: false,
