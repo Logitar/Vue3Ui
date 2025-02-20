@@ -48,8 +48,10 @@ defineExpose({ focus });
 
 <template>
   <div :class="classes">
+    <slot name="before"></slot>
     <slot>
       <input
+        :aria-describedby="describedBy"
         :aria-label="ariaLabel"
         :checked="parseBoolean(modelValue)"
         class="form-check-input"
@@ -67,5 +69,6 @@ defineExpose({ focus });
         <label v-if="label" class="form-check-label" :for="inputId">{{ label }}</label>
       </slot>
     </slot>
+    <slot name="after"></slot>
   </div>
 </template>

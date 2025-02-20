@@ -27,6 +27,27 @@ type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {};
 
+export const CheckboxWithHelpText: Story = {
+  name: "Checkbox with help text",
+  args: {
+    describedBy: "finished-help",
+    id: "finished",
+  },
+  render: (args) => ({
+    components: { TarCheckbox },
+    setup() {
+      return { args };
+    },
+    template: `
+      <TarCheckbox v-bind="args">
+        <template #after>
+          <div id="finished-help" class="form-text">Only tick this checkbox once you're finished!</div>
+        </template>
+      </TarCheckbox>
+    `,
+  }),
+};
+
 export const CheckboxVsSwitch: Story = {
   name: "Checkbox vs. Switch",
   render: (args) => ({

@@ -7,6 +7,10 @@ export type CheckboxOptions = {
    */
   ariaLabel?: string;
   /**
+   * When adding a form input text, this is the unique identifier of the form text element. This will specify the `aria-describedby` attribute to ensure assistive technologies will announce the text when the user focuses or enters the control.
+   */
+  describedBy?: string;
+  /**
    * The checkbox will display with a disabled style and will not react to events.
    */
   disabled?: boolean | string;
