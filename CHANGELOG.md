@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing yet.
 
+## [3.1.1] - 2025-06-01
+
+### Fixed
+
+- NPM upgrades.
+- `style.css` export.
+
 ## [3.1.0] - 2025-02-20
 
 ### Added
@@ -171,7 +178,8 @@ Nothing yet.
 - Implemented an Image component.
 - Implemented an Input component.
 
-[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v3.1.0...HEAD
+[unreleased]: https://github.com/Logitar/Vue3Ui/compare/v3.1.1...HEAD
+[3.1.1]: https://github.com/Logitar/Vue3Ui/compare/v3.1.0...v3.1.1
 [3.1.0]: https://github.com/Logitar/Vue3Ui/compare/v3.0.0...v3.1.0
 [3.0.0]: https://github.com/Logitar/Vue3Ui/compare/v2.5.3...v3.0.0
 [2.5.3]: https://github.com/Logitar/Vue3Ui/compare/v2.5.2...v2.5.3
